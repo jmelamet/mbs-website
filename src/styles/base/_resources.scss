@@ -1,0 +1,20 @@
+$accent02--active: #A0C6EC;
+$accent02--inactive: #EEF5FC;
+
+@mixin min($min) {
+    @media screen and (min-width: $min ) {
+        @content
+    }
+};
+
+@mixin max($max) {
+    @media screen and (max-width: $max ) {
+        @content
+    } 
+};
+
+@mixin minmax($min,$max) {
+    @media screen and (min-width: $min ) and (max-width: $max ) {
+        @content
+    }
+};
