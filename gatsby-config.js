@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://metronomestag.wpengine.com/",
     title: "Metronome",
   },
   plugins: [
@@ -8,6 +8,12 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://metronomestag.wpengine.com/graphql",
+        auth: {
+          htaccess: {
+            username: `metronomestag`,
+            password: `nerdcow`,
+          }
+        }
       },
     },
     "gatsby-plugin-image",
