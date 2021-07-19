@@ -46,8 +46,8 @@ module.exports = {
                 //     secret: 'cs_966f9b08bb726d6902afa3eff8784d91fd986d76',
                 // },
 				api: {
-                    key: 'ck_876b122ca3195a786c9e8c034383f3f1dec20015',
-                    secret: 'cs_5552b562f0ed8057cef16b7b32f43d7d5421fc66',
+                    key: '09add0cd63',
+                    secret: 'dcd4f3f1592320a',
                 },
 				// basicAuth: {
                 //     username: 'metronomestag',
