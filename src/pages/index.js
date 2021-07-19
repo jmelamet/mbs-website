@@ -11,7 +11,7 @@ export default class IndexPage extends Component {
 			<main>
 				<title>Home Page1</title>
 				<div>
-					<div dangerouslySetInnerHTML={{ __html: content }} />
+					{/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
 					<div>
 						<SignUpForm/>
 					</div>
