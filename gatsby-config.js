@@ -30,5 +30,24 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-sass",
 		},
+		{
+            resolve: 'gatsby-source-gravityforms',
+            options: {
+                // Base URL needs to include protocol (http/https)
+                baseUrl: 'https://metronomestag.wpengine.com',
+                include: [], // Array of form IDs. Will only import these forms.
+                exclude: [], // Array of form IDs. Will exclude these forms.
+                // Gravity Forms API
+                allowSelfSigned: true,
+                api: {
+                    key: '1641b8423d',
+                    secret: 'be6d9a52d3df92f',
+                },
+				basicAuth: {
+                    username: 'metronomestag',
+                    password: 'nerdcow',
+                },
+            },
+        },
 	],
 };
