@@ -1,21 +1,21 @@
 module.exports = {
 	siteMetadata: {
-		// siteUrl: "https://metronomestag.wpengine.com",
-		siteUrl: "https://devnerdcow.wpengine.com",
+		siteUrl: "https://metronomestag.wpengine.com",
+		// siteUrl: "https://devnerdcow.wpengine.com",
 		title: "Metronome",
 	},
 	plugins: [
 		{
 			resolve: "gatsby-source-wordpress",
 			options: {
-				// url: "https://metronomestag.wpengine.com/graphql",
-				url: "https://devnerdcow.wpengine.com/graphql",
-				// auth: {
-				// 	htaccess: {
-				// 		username: `metronomestag`,
-				// 		password: `nerdcow`,
-				// 	}
-				// }
+				url: "https://metronomestag.wpengine.com/graphql",
+				// url: "https://devnerdcow.wpengine.com/graphql",
+				auth: {
+					htaccess: {
+						username: `metronomestag`,
+						password: `nerdcow`,
+					}
+				}
 			},
 		},
 		"gatsby-plugin-image",
