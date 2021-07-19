@@ -40,8 +40,8 @@ module.exports = {
                 // Gravity Forms API
                 allowSelfSigned: true,
                 api: {
-                    key: '1641b8423d',
-                    secret: 'be6d9a52d3df92f',
+                    key: 'ck_119ac199ab2f9e9a89dcb266c10e0fc89ab92f4c',
+                    secret: 'cs_966f9b08bb726d6902afa3eff8784d91fd986d76',
                 },
 				basicAuth: {
                     username: 'metronomestag',
