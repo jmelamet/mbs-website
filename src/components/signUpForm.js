@@ -59,10 +59,10 @@ function handleSuccess({values, reset, confirmations}) {
 
 const SignUpForm = () => (
     <GravityFormForm
-        id={1}
+        id={7}
         formData={AllGravityData()}
-        presetValues={{ input_1: 'Michal', input_2: 'michal@nerdcow.co.uk', input_3: '123123123' }}
-        lambda="https://metronomestag.wpengine.com/formsubmit/v1/submit/"
+        // presetValues={{ input_1: 'Michal', input_2: 'michal@nerdcow.co.uk', input_3: '123123123' }}
+        lambda="https://devnerdcow.wpengine.com/formsubmit/v1/submit/"
         successCallback={handleSuccess}
         errorCallback={handleError}
     />
