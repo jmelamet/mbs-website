@@ -1,14 +1,14 @@
 module.exports = {
 	siteMetadata: {
-		// siteUrl: "https://metronomestag.wpengine.com/",
-		siteUrl: "https://devnerdcow.wpengine.com/",
+		// siteUrl: "https://metronomestag.wpengine.com",
+		siteUrl: "https://devnerdcow.wpengine.com",
 		title: "Metronome",
 	},
 	plugins: [
 		{
 			resolve: "gatsby-source-wordpress",
 			options: {
-				url: "https://metronomestag.wpengine.com/graphql",
+				// url: "https://metronomestag.wpengine.com/graphql",
 				url: "https://devnerdcow.wpengine.com/graphql",
 				// auth: {
 				// 	htaccess: {
@@ -36,7 +36,7 @@ module.exports = {
             resolve: 'gatsby-source-gravityforms',
             options: {
                 // Base URL needs to include protocol (http/https)
-                baseUrl: 'https://devnerdcow.wpengine.com/',
+                baseUrl: 'https://devnerdcow.wpengine.com',
                 include: [], // Array of form IDs. Will only import these forms.
                 exclude: [], // Array of form IDs. Will exclude these forms.
                 // Gravity Forms API
