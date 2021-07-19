@@ -5,7 +5,7 @@ import SignUpForm from "../components/signUpForm"
 export default class IndexPage extends Component {
 	render() {
 		const { data } = this.props
-		const content = data.allWpPage.edges[0].node.content;
+		// const content = data.allWpPage.edges[0].node.content;
 
 		return (
 			<main>
@@ -21,18 +21,18 @@ export default class IndexPage extends Component {
 	}
 }
 
-export const query = graphql`
-    query {
-		allWpPage(filter: {id: {eq: "cG9zdDo1"}}) {
-			edges {
-				node {
-					id
-					template {
-						templateName
-					}
-					content
-				}
-			}
-		}
-    }
-`
+// export const query = graphql`
+//     query {
+// 		allWpPage(filter: {id: {eq: "cG9zdDo1"}}) {
+// 			edges {
+// 				node {
+// 					id
+// 					template {
+// 						templateName
+// 					}
+// 					content
+// 				}
+// 			}
+// 		}
+//     }
+// `
