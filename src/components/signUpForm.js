@@ -62,7 +62,7 @@ const SignUpForm = () => (
         id={7}
         formData={AllGravityData()}
         // presetValues={{ input_1: 'Michal', input_2: 'michal@nerdcow.co.uk', input_3: '123123123' }}
-        lambda="https://devnerdcow.wpengine.com/formsubmit/v1/submit"
+        lambda="https://devnerdcow.wpengine.com/wp-json/formsubmit/v1/submit/"
         successCallback={handleSuccess}
         errorCallback={handleError}
     />
