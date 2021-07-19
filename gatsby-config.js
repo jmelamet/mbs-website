@@ -21,10 +21,10 @@ module.exports = {
 		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-source-filesystem",
-			// options: {
-			// 	name: "images",
-			// 	path: "./src/assets/images/",
-			// },
+			options: {
+				name: "images",
+				path: "./src/assets/images/",
+			},
 			__key: "images",
 		},
 		{
