@@ -2,6 +2,22 @@ import React, { Component } from "react"
 import SignUpForm from "../components/signUpForm"
 
 export default class SignUp extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+
+		}
+
+		this.handleService = this.handleService.bind(this)
+	}
+
+	handleService = (event, name) => {
+		event.target.checked ? this.setState({[name]: true}) : this.setState({[name]: false})
+		let services = document.getElementsByClassName('ginput_container_multiselect')
+		let service = services[0].querySelectorAll(`option[value="${name}"]`)
+		service[0].selected === false ? service[0].selected = true : service[0].selected = false
+	}
+
 	render() {
         return (
             <div className="container__wrapper">
@@ -33,59 +49,83 @@ export default class SignUp extends Component {
                         <div className="sign-up__content">
                             <div className="step visible">
                                 <div className="sign-up__grid services">
-                                    <label htmlFor="accounting" className="input__wrapper">
-                                        <input type="checkbox" name="accounting" id="accounting"/>
+                                    <div className="services__item" onClick={(event) => this.handleService(event, "Accouting")}>
+										<span className="checkbox"></span>
                                         <span>Accounting</span>
-                                    </label>
-                                    <label htmlFor="administration-and-support" className="input__wrapper">
-                                        <input type="checkbox" name="administration-and-support" id="administration-and-support"/>
+                                    </div>
+                                    <div className="services__item" onClick={(event) => this.handleService(event, "Administration & support")}>
+										<span className="checkbox"></span>
                                         <span>Administration and support</span>
-                                    </label>
-                                    <label htmlFor="compliance-management" className="input__wrapper">
-                                        <input type="checkbox" name="compliance-management" id="compliance-management"/>
+                                    </div>
+                                    <div className="services__item" onClick={(event) => this.handleService(event, "Compliance management")}>
+										<span className="checkbox"></span>
                                         <span>Compliance management</span>
-                                    </label>
-                                    <label htmlFor="risk-assessment" className="input__wrapper">
-                                        <input type="checkbox" name="risk-assessment" id="risk-assessment"/>
+                                    </div>
+                                    <div className="services__item" onClick={(event) => this.handleService(event, "Risk assessment")}>
+										<span className="checkbox"></span>
                                         <span>Risk assessment</span>
-                                    </label>
-                                    <label htmlFor="not-sure" className="input__wrapper">
-                                        <input type="checkbox" name="not-sure" id="not-sure"/>
+                                    </div>
+                                    <div className="services__item" onClick={(event) => this.handleService(event, "Not sure")}>
+										<span className="checkbox"></span>
                                         <span>Not sure</span>
-                                    </label>
+                                    </div>
                                 </div>
                                 <a href="#" className="button button--primary button--next button--disabled">Next step</a>
                             </div>
                             <div className="step specifics">
-                                <div className="specifics__service" id="accounting">
-                                    <label htmlFor="payroll-1" className="input__wrapper">
-                                        <input type="checkbox" name="payroll-1" id="payroll-1"/>
-                                        <span>Accounting - Payroll</span>
-                                    </label>
+                                <div className="specifics__service">
+                                    <div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Accounts & tax")}>
+										<span className="checkbox"></span>
+                                        <span>Accounts & tax</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Payroll")}>
+										<span className="checkbox"></span>
+                                        <span>Payroll</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "VAT returns")}>
+										<span className="checkbox"></span>
+                                        <span>VAT returns</span>
+                                    </div>
                                 </div>
-                                <div className="specifics__service" id="administration-and-support">
-                                    <label htmlFor="payroll-2" className="input__wrapper">
-                                        <input type="checkbox" name="payroll-2" id="payroll-2"/>
-                                        <span>Administration and support - Payroll</span>
-                                    </label>
+                                <div className="specifics__service">
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Administration 1")}>
+										<span className="checkbox"></span>
+                                        <span>Administration 1</span>
+                                    </div>
                                 </div>
                                 <div className="specifics__service" id="compliance-management">
-                                    <label htmlFor="payroll-3" className="input__wrapper">
-                                        <input type="checkbox" name="payroll-3" id="payroll-3"/>
-                                        <span>Compliance management - Payroll</span>
-                                    </label>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Subservice 1")}>
+										<span className="checkbox"></span>
+                                        <span>Subservice 1</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Subservice 2")}>
+										<span className="checkbox"></span>
+                                        <span>Subservice 2</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Subservice 3")}>
+										<span className="checkbox"></span>
+                                        <span>Subservice 3</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Subservice 4")}>
+										<span className="checkbox"></span>
+                                        <span>Subservice 4</span>
+                                    </div>
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Subservice 5")}>
+										<span className="checkbox"></span>
+                                        <span>Subservice 5</span>
+                                    </div>
                                 </div>
-                                <div className="specifics__service" id="risk-assessment">
-                                    <label htmlFor="payroll-4" className="input__wrapper">
-                                        <input type="checkbox" name="payroll-4" id="payroll-4"/>
-                                        <span>Risk assessment- Payroll</span>
-                                    </label>
+                                <div className="specifics__service">
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Compliance 1")}>
+										<span className="checkbox"></span>
+                                        <span>Compliance 1</span>
+                                    </div>
                                 </div>
-                                <div className="specifics__service" id="not-sure">
-                                    <label htmlFor="payroll-5" className="input__wrapper">
-                                        <input type="checkbox" name="payroll-5" id="payroll-5"/>
-                                        <span>Not sure - Payroll</span>
-                                    </label>
+                                <div className="specifics__service">
+									<div className="specifics__item" role="button" onClick={(event) => this.handleService(event, "Something 1")}>
+										<span className="checkbox"></span>
+                                        <span>Something 1</span>
+                                    </div>
                                 </div>
                                 <a href="#" className="button button--primary button--next button--disabled">Next step</a>
                             </div>
