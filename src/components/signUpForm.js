@@ -50,11 +50,11 @@ const AllGravityData = () => {
 }
 
 function handleError({values, error, reset}) {
-    //handle error
+    console.log(values, error, reset)
 }
 
 function handleSuccess({values, reset, confirmations}) {
-    //handle success
+    console.log(values, reset, confirmations)
 }
 
 const SignUpForm = () => (
