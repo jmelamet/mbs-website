@@ -1,9 +1,7 @@
 import React, { Component } from "react"
-import SignUpForm from "../components/SignUpForm"
+import SignUpForm from "../components/signUpForm"
 
 export default class SignUp extends Component {
-	
-
 	render() {
         return (
             <div className="container__wrapper">
