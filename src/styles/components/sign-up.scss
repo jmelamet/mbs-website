@@ -1,0 +1,44 @@
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    padding: 200px;
+    &__navigation {
+        .sign-up__breadcrumbs {
+            display: flex;
+            align-items: center;
+            .breadcrumb {
+                text-align: center;
+                margin-right: 30px;
+                span {
+
+                }
+                p {
+
+                }
+                &.active {
+
+                }
+            }
+        }
+        .sign-up__perks {
+
+        }
+    }
+    &__content {
+        margin-top: 100px;
+        .step {
+            display: none;
+            &.specifics {
+                .specifics__service {
+                    display: none;
+                    &.visible {
+                        display: block;
+                    }
+                }
+            }
+            &.visible {
+                display: block;
+            }
+        }
+    }
+}

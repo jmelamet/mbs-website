@@ -1,5 +1,4 @@
 const path = require(`path`)
-const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -43,16 +42,4 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
     })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `WpPage`) {
-        const value = createFilePath({ node, getNode })
-        createNodeField({
-            name: `uri`,
-            node,
-            value,
-        })
-    }
 }
