@@ -50,18 +50,30 @@ const AllGravityData = () => {
 }
 
 function handleError({values, error, reset}) {
-    console.log(values, error, reset)
+
 }
 
 function handleSuccess({values, reset, confirmations}) {
-    console.log(values, reset, confirmations)
+    const steps = document.getElementsByClassName('step')
+	const breadcrumbs = document.getElementsByClassName('breadcrumb')
+	const customerName = document.getElementsByClassName('customer-name')
+	console.log(values["input_1"])
+
+	steps[2].classList.remove('visible')
+
+	customerName[0].innerText = values["input_1"]
+
+	steps[3].classList.add('visible')
+
+	for (let breadcrumb of breadcrumbs) {
+		breadcrumb.classList.add('breadcrumb--finished')
+	}
 }
 
 const SignUpForm = () => (
     <GravityFormForm
         id={7}
         formData={AllGravityData()}
-        // presetValues={{ input_1: 'Michal', input_2: 'michal@nerdcow.co.uk', input_3: '123123123' }}
         lambda="https://devnerdcow.wpengine.com/wp-json/formsubmit/v1/submit/"
         successCallback={handleSuccess}
         errorCallback={handleError}

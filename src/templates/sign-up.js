@@ -227,7 +227,7 @@ export default class SignUp extends Component {
                                 <SignUpForm/>
                             </div>
                             <div className="step">
-
+                                <p>Thanks for your submission, <span class="customer-name"></span>!</p>
                             </div>
                         </div>
                     </div>
