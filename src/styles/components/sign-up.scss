@@ -28,12 +28,10 @@
         margin-top: 100px;
         .step {
             display: none;
-            &.specifics {
-                .specifics__service {
-                    display: none;
-                    &.visible {
-                        display: block;
-                    }
+            .specifics__service {
+                display: none;
+                &.visible {
+                    display: block;
                 }
             }
             &.visible {
