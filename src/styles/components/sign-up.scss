@@ -1,41 +1,352 @@
-.sign-up {
-    display: flex;
-    flex-direction: column;
-    padding: 200px;
-    &__navigation {
-        .sign-up__breadcrumbs {
-            display: flex;
+.sign-up-template {
+    &__header {
+        margin: 60px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            width: 219px;
+            height: auto;
+            display: inline-block;
+        }
+        .info-box {
+            padding: 15px;
+            border: 1px solid $border;
+            border-radius: 8px;
+            display: inline-flex;
             align-items: center;
-            .breadcrumb {
-                text-align: center;
-                margin-right: 30px;
+            text-decoration: none;
+            img {
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-family: $secondaryFont;
+                color: $black;
                 span {
-
-                }
-                p {
-
-                }
-                &.active {
-
+                    color: $accent01--active;
                 }
             }
-        }
-        .sign-up__perks {
-
         }
     }
-    &__content {
-        margin-top: 100px;
-        .step {
-            display: none;
-            .specifics__service {
-                display: none;
-                &.visible {
-                    display: block;
+    .sign-up {
+        display: flex;
+        flex-direction: column;
+        &__breadcrumbs {
+            padding: 30px 0;
+            border-top: 1px solid $border;
+            border-bottom: 1px solid $border;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .breadcrumb {
+                display: flex;
+                align-items: center;
+                &:not(:last-child) {
+                    margin-right: 35px;
+                }
+                span {
+                    position: relative;
+                    width: 35px;
+                    height: 45px;
+                    margin-right: 15px;
+                    &::before {
+                        content: "1";
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 14px;
+                        line-height: 14px;
+                        font-weight: 600;
+                        font-family: $secondaryFont;
+                    }
+                    &::after {
+                        content: "";
+                        width: 27.5px;
+                        height: 40px;
+                        background-color: $accent02--inactive;
+                        border-radius: 1000px;
+                        display: inline-block;
+                        z-index: -1;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(15deg);
+                        position: relative;
+                        transition: .5s;
+                    }
+                    &.second {
+                        &::before {
+                            content: "2";
+                        }
+                    }
+                    &.third {
+                        &::before {
+                            content: "3";
+                        }
+                    }
+                    &.fourth {
+                        &::before {
+                            content: "4";
+                        }
+                    }
+                }
+                p {
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-family: $secondaryFont;
+                    color: $black;
+                }
+                &--completed {
+                    cursor: pointer;
+                    span {
+                        &::after {
+                            background-color: $accent02--active;
+                        }
+                    }
+                    &:hover {
+                        span {
+                            &::after {
+                                height: 50px;
+                                background-color: $accent02;
+                            }
+                        }
+                    }
+                }
+                &--finished {
+                    span {
+                        &::after {
+                            background-color: $accent01--inactive;
+                        }
+                    }
+                    &:last-child {
+                        &::before {
+                            color: $white;
+                        }
+                        &::after {
+                            height: 65px;
+                            background-color: $accent01--active;
+                        }
+                    }
+                }
+                &.active {
+                    cursor: default;
+                    span {
+                        &::before {
+                            color: $white;
+                        }
+                        &::after {
+                            height: 65px;
+                            background-color: $accent01--active;
+                        }
+                    }
                 }
             }
-            &.visible {
-                display: block;
+        }
+        &__content {
+            display: grid;
+            grid-template-columns: 117fr 75fr;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            .sign-up__steps {
+                padding-right: 60px;
+                .step {
+                    display: none;
+                    h1 {
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                    }
+                    .sign-up__grid {
+                        padding: 60px 0;
+                        border-bottom: 1px solid $border;
+                        &.services {
+                            display: grid;
+                            grid-template-columns: repeat(3, minmax(0, 1fr));
+                            grid-auto-rows: minmax(0, 1fr);
+                            grid-gap: 30px;
+                            .services__item {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                padding: 30px 15px;
+                                border: 1px solid $border;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                transition: .3s;
+                                span.checkbox {
+                                    margin-bottom: auto;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 4px;
+                                    border: 1px solid $black;
+                                    display: inline-block;
+                                    transition: .3s;
+                                    position: relative;
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        transform: translate(-50%, -50%);
+                                        mask-size: 17px 12px;
+                                        -webkit-mask-size: 17px 12px;
+                                        width: 17px;
+                                        height: 12px;
+                                        mask-image: url('../assets/images/tick.svg');
+                                        -webkit-mask-image: url('../assets/images/tick.svg');
+                                        z-index: 5;
+                                        background-color: transparent;
+                                        transition: .3s;
+                                    }
+                                }
+                                p {
+                                    color: $black;
+                                    font-family: $primaryFont;
+                                    font-size: 14px;
+                                    line-height: 14px;
+                                    text-transform: uppercase;
+                                    text-align: center;
+                                    margin-top: 30px;
+                                }
+                                &:hover {
+                                    box-shadow: $shadow;
+                                    border: 1px solid transparent;
+                                    span.checkbox {
+                                        border: 1px solid $accent02--inactive;
+                                        background-color: $accent02--inactive;
+                                    }
+                                }
+                                &.active {
+                                    box-shadow: $shadow;
+                                    border: 1px solid $accent02--selected;
+                                    span.checkbox {
+                                        border: 1px solid $accent02--inactive;
+                                        background-color: $accent02--inactive;
+                                        &::after {
+                                            background-color: $accent02--selected;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .specifics__items {
+                        margin-top: 60px;
+                        border-bottom: 1px solid $border;
+                        .specifics__service {
+                            margin-bottom: 60px;
+                            p.label {
+                                margin-bottom: 15px;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid $border;
+                            }
+                            .specifics__item {
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                                &:not(:last-child) {
+                                    margin-bottom: 15px;
+                                }
+                                span.checkbox {
+                                    margin-right: 15px;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 4px;
+                                    border: 1px solid $black;
+                                    display: inline-block;
+                                    transition: .3s;
+                                    position: relative;
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        transform: translate(-50%, -50%);
+                                        mask-size: 17px 12px;
+                                        -webkit-mask-size: 17px 12px;
+                                        width: 17px;
+                                        height: 12px;
+                                        mask-image: url('../assets/images/tick.svg');
+                                        -webkit-mask-image: url('../assets/images/tick.svg');
+                                        z-index: 5;
+                                        background-color: transparent;
+                                        transition: .3s;
+                                    }
+                                }
+                                p {
+                                    color: $black;
+                                }
+                                &:hover {
+                                    span.checkbox {
+                                        border: 1px solid $accent02--inactive;
+                                        background-color: $accent02--inactive;
+                                    }
+                                }
+                                &.active {
+                                    span.checkbox {
+                                        border: 1px solid $accent02--inactive;
+                                        background-color: $accent02--inactive;
+                                        &::after {
+                                            background-color: $accent02--selected;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .button {
+                        left: 50%;
+                        transform: translateX(-50%);
+                        margin-top: 30px;
+                    }
+                    .specifics__service {
+                        display: none;
+                        &.visible {
+                            display: block;
+                        }
+                    }
+                    &.visible {
+                        display: block;
+                    }
+                }
+            }
+            .sign-up__benefits {
+                border-left: 1px solid $border;
+                padding-left: 60px;
+                ul {
+                    list-style: none;
+                    li {
+                        font-family: $secondaryFont;
+                        font-size: 20px;
+                        line-height: 32px;
+                        color: $grey;
+                        font-weight: 400;
+                        padding-left: 40px;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 24px;
+                            height: 24px;
+                            background-size: 24px 24px;
+                            background-image: url('../assets/images/bullet-tick.svg');
+                            display: inline-block;
+                            position: absolute;
+                            left: 0;
+                            top: 5px;
+                        }
+                        &:not(:last-child) {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
             }
         }
     }

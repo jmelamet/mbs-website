@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SignUpForm from "../components/signUpForm"
 
 export default class IndexPage extends Component {
@@ -12,10 +12,8 @@ export default class IndexPage extends Component {
 				<title>Home Page1</title>
 				<div>
 					<p>Test</p>
-					<div>
-						<SignUpForm/>
-					</div>
 					<div dangerouslySetInnerHTML={{ __html: content }} />
+					<Link to="/sign-up/">Sign up</Link>
 				</div>
 			</main>
 		)

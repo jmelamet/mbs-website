@@ -57,12 +57,9 @@ function handleSuccess({values, reset, confirmations}) {
     const steps = document.getElementsByClassName('step')
 	const breadcrumbs = document.getElementsByClassName('breadcrumb')
 	const customerName = document.getElementsByClassName('customer-name')
-	console.log(values["input_1"])
 
 	steps[2].classList.remove('visible')
-
 	customerName[0].innerText = values["input_1"]
-
 	steps[3].classList.add('visible')
 
 	for (let breadcrumb of breadcrumbs) {
