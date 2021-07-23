@@ -4,6 +4,8 @@ import SignUpForm from "../components/signUpForm"
 
 import informationIcon from "../assets/images/information-icon.svg"
 
+import animateScrollTo from "animated-scroll-to"
+
 export default class SignUp extends Component {
 	constructor(props) {
 		super(props)
@@ -96,6 +98,8 @@ export default class SignUp extends Component {
 
             steps[index].classList.add('visible')
             element.classList.add('active')
+
+            animateScrollTo(0)
         }
     }
 
@@ -114,13 +118,20 @@ export default class SignUp extends Component {
 
         steps[newStepIndex].classList.add('visible')
         breadcrumbs[newStepIndex].classList.add('active')
+
+        animateScrollTo(0)
     }
 
     componentDidMount() {
         let inputs = document.getElementsByClassName('gravityform__field__input')
+        let phoneInput = document.getElementsByClassName('gravityform__field__input__phone')
         for (let input of inputs) {
             input.addEventListener('change', this.textInputValidation)
         }
+
+        this.setInputFilter(phoneInput[0], function(value) {
+            return /^\d*$/.test(value)
+        })
     }
 
     textInputValidation() {
@@ -139,12 +150,27 @@ export default class SignUp extends Component {
         }
     }
 
+    setInputFilter(phoneInput, inputFilter) {
+        ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+            phoneInput.addEventListener(event, function() {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value
+                    this.oldSelectionStart = this.selectionStart
+                    this.oldSelectionEnd = this.selectionEnd
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd)
+                } else {
+                    this.value = ""
+                }
+            })
+        })
+    }
+
     componentDidUpdate() {
         this.state.isAnyServiceActive ? this.firstButton.current.classList.remove('button--disabled') : this.firstButton.current.classList.add('button--disabled')
         this.state.isAnySpecificActive ? this.secondButton.current.classList.remove('button--disabled') : this.secondButton.current.classList.add('button--disabled')
     }
-
-    
 
 	render() {
         return (

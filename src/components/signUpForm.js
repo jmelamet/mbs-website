@@ -2,6 +2,8 @@ import React from 'react'
 import GravityFormForm from 'gatsby-gravityforms-component'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import animateScrollTo from "animated-scroll-to"
+
 const AllGravityData = () => {
     const { allGfForm } = useStaticQuery(
         graphql`
@@ -61,6 +63,8 @@ function handleSuccess({values, reset, confirmations}) {
 	steps[2].classList.remove('visible')
 	customerName[0].innerText = values["input_1"]
 	steps[3].classList.add('visible')
+
+	animateScrollTo(0)
 
 	for (let breadcrumb of breadcrumbs) {
 		breadcrumb.classList.remove('active')
