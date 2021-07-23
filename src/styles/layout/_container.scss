@@ -4,5 +4,10 @@
         width: 100%;
         display: block;
         margin: 0 auto;
+        padding: 0 30px;
+        @include max(1020px) {
+            max-width: 100%;
+            width: calc(100vw - 60px);
+        }
     }
 }

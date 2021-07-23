@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import SignUpForm from "../components/signUpForm"
 
-import logo from "../assets/images/logo.png"
 import informationIcon from "../assets/images/information-icon.svg"
 
 export default class SignUp extends Component {
@@ -152,7 +151,7 @@ export default class SignUp extends Component {
             <div className="container__wrapper sign-up-template">
                 <div className="container">
                     <div className="sign-up-template__header">
-                        <Link to="/"><img className="logo" src={logo}/></Link>
+                        <Link to="/" className="logo"></Link>
                         <a href="tel:0207 946 0496" className="info-box">
                             <img src={informationIcon}/>
                             <p><span>Questions?</span> 0207 946 0496</p>
@@ -283,12 +282,14 @@ export default class SignUp extends Component {
                                     <p className="label">Step 4/4</p>
                                     <h1>Thank you, <span className="customer-name"></span>!</h1>
                                     <p>We’ll get in touch with you to learn more about your startup and discuss details within 48 hours.</p>
-                                    <a className="email-box" href="mailto:help@mbs.com">
-                                        <span></span>help@mbs.com
-                                    </a>
-                                    <a className="phone-box" href="tel:0207 946 0496">
-                                        <span></span>0207 946 0496
-                                    </a>
+                                    <div className="sign-up__contact">
+                                        <a className="email-box" href="mailto:help@mbs.com">
+                                            <span></span>help@mbs.com
+                                        </a>
+                                        <a className="phone-box" href="tel:0207 946 0496">
+                                            <span></span>0207 946 0496
+                                        </a>
+                                    </div>
                                     <Link to="/" className="button button--secondary">Go to home page</Link>
                                 </div>
                             </div>
