@@ -28,7 +28,7 @@ export default class SignUp extends Component {
         this.handleSteps = this.handleSteps.bind(this)
 	}
 
-	handleService = (event, name) => {
+	handleService = (event, name, index) => {
         let element = event.currentTarget
         let isAnyServiceActive = false
 
@@ -39,6 +39,12 @@ export default class SignUp extends Component {
         if (element.classList.contains('active')) {
             element.classList.remove('active')
             this.setState({[name]: false})
+            let specificsFromService = document.getElementsByClassName(index)
+            for (let specific of specificsFromService) {
+                if (specific.classList.contains('active')) {
+                    specific.click()
+                }
+            }
         } else {
             element.classList.add('active')
             this.setState({[name]: true})
@@ -111,10 +117,35 @@ export default class SignUp extends Component {
         breadcrumbs[newStepIndex].classList.add('active')
     }
 
+    componentDidMount() {
+        let inputs = document.getElementsByClassName('gravityform__field__input')
+        for (let input of inputs) {
+            input.addEventListener('change', this.textInputValidation)
+        }
+    }
+
+    textInputValidation() {
+        if (this.classList.contains("gravityform__field__input__email")) {
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value)) {
+                this.parentElement.classList.add('verified')
+            } else {
+                this.parentElement.classList.remove('verified')
+            }
+        } else {
+            if (this.value !== "") {
+                this.parentElement.classList.add('verified')
+            } else {
+                this.parentElement.classList.remove('verified')
+            }
+        }
+    }
+
     componentDidUpdate() {
         this.state.isAnyServiceActive ? this.firstButton.current.classList.remove('button--disabled') : this.firstButton.current.classList.add('button--disabled')
         this.state.isAnySpecificActive ? this.secondButton.current.classList.remove('button--disabled') : this.secondButton.current.classList.add('button--disabled')
     }
+
+    
 
 	render() {
         return (
@@ -153,23 +184,23 @@ export default class SignUp extends Component {
                                     <h1>What services do you need?</h1>
                                     <p>Mix & match services that you need. We’ll nail down the specifics at the next step. If you’re unsure what to pick, we will help you identify gaps in your team.</p>
                                     <div className="sign-up__grid services">
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Accounting")}>
+                                        <div className="services__item" onClick={(event) => this.handleService(event, "Accounting", 0)}>
                                             <span className="checkbox"></span>
                                             <p>Accounting</p>
                                         </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Administration & support")}>
+                                        <div className="services__item" onClick={(event) => this.handleService(event, "Administration & support", 1)}>
                                             <span className="checkbox"></span>
                                             <p>Administration and support</p>
                                         </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Compliance management")}>
+                                        <div className="services__item" onClick={(event) => this.handleService(event, "Compliance management", 2)}>
                                             <span className="checkbox"></span>
                                             <p>Compliance management</p>
                                         </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Risk assessment")}>
+                                        <div className="services__item" onClick={(event) => this.handleService(event, "Risk assessment", 3)}>
                                             <span className="checkbox"></span>
                                             <p>Risk assessment</p>
                                         </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Not sure")}>
+                                        <div className="services__item" onClick={(event) => this.handleService(event, "Not sure", 4)}>
                                             <span className="checkbox"></span>
                                             <p>Not sure</p>
                                         </div>
@@ -183,59 +214,59 @@ export default class SignUp extends Component {
                                     <div className="specifics__items">
                                         <div className={`specifics__service${this.state["Accounting"] === true ? ' visible' : ''}`}>
                                             <p className="label">Accounting</p>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Accounts & tax")}>
+                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Accounts & tax")}>
                                                 <span className="checkbox"></span>
                                                 <p>Accounts & tax</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Payroll")}>
+                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Payroll")}>
                                                 <span className="checkbox"></span>
                                                 <p>Payroll</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "VAT returns")}>
+                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "VAT returns")}>
                                                 <span className="checkbox"></span>
                                                 <p>VAT returns</p>
                                             </div>
                                         </div>
                                         <div className={`specifics__service${this.state["Administration & support"] === true ? ' visible' : ''}`}>
                                             <p className="label">Administration & support</p>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Administration 1")}>
+                                            <div className="specifics__item 1" role="button" onClick={(event) => this.handleSpecific(event, "Administration 1")}>
                                                 <span className="checkbox"></span>
                                                 <p>Administration 1</p>
                                             </div>
                                         </div>
                                         <div className={`specifics__service${this.state["Compliance management"] === true ? ' visible' : ''}`}>
                                             <p className="label">Compliance management</p>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 1")}>
+                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 1")}>
                                                 <span className="checkbox"></span>
                                                 <p>Subservice 1</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 2")}>
+                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 2")}>
                                                 <span className="checkbox"></span>
                                                 <p>Subservice 2</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 3")}>
+                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 3")}>
                                                 <span className="checkbox"></span>
                                                 <p>Subservice 3</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 4")}>
+                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 4")}>
                                                 <span className="checkbox"></span>
                                                 <p>Subservice 4</p>
                                             </div>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 5")}>
+                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 5")}>
                                                 <span className="checkbox"></span>
                                                 <p>Subservice 5</p>
                                             </div>
                                         </div>
                                         <div className={`specifics__service${this.state["Risk assessment"] === true ? ' visible' : ''}`}>
                                             <p className="label">Risk assessment</p>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Compliance 1")}>
+                                            <div className="specifics__item 3" role="button" onClick={(event) => this.handleSpecific(event, "Compliance 1")}>
                                                 <span className="checkbox"></span>
                                                 <p>Compliance 1</p>
                                             </div>
                                         </div>
                                         <div className={`specifics__service${this.state["Not sure"] === true ? ' visible' : ''}`}>
                                             <p className="label">Not sure</p>
-                                            <div className="specifics__item" role="button" onClick={(event) => this.handleSpecific(event, "Something 1")}>
+                                            <div className="specifics__item 4" role="button" onClick={(event) => this.handleSpecific(event, "Something 1")}>
                                                 <span className="checkbox"></span>
                                                 <p>Something 1</p>
                                             </div>
@@ -244,10 +275,21 @@ export default class SignUp extends Component {
                                     <a href="#" className="button button--primary button--next button--disabled" ref={this.secondButton} onClick={(event) => this.handleSteps(event)}>Go to the next step</a>
                                 </div>
                                 <div className="step">
+                                    <p className="label">Step 3/4</p>
+                                    <h1>Please tell us more about yourself</h1>
                                     <SignUpForm/>
                                 </div>
                                 <div className="step">
-                                    <p>Thanks for your submission, <span className="customer-name"></span>!</p>
+                                    <p className="label">Step 4/4</p>
+                                    <h1>Thank you, <span className="customer-name"></span>!</h1>
+                                    <p>We’ll get in touch with you to learn more about your startup and discuss details within 48 hours.</p>
+                                    <a className="email-box" href="mailto:help@mbs.com">
+                                        <span></span>help@mbs.com
+                                    </a>
+                                    <a className="phone-box" href="tel:0207 946 0496">
+                                        <span></span>0207 946 0496
+                                    </a>
+                                    <Link to="/" className="button button--secondary">Go to home page</Link>
                                 </div>
                             </div>
                             <div className="sign-up__benefits">

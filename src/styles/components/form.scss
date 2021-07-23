@@ -1,0 +1,171 @@
+.gform_wrapper {
+    .gravityform {
+        .gravityform__error_inform {
+            display: none;
+        }
+        .gform_body {
+            .gform_fields {
+                display: flex;
+                flex-direction: column;
+                .gfield {
+                    &:not(:first-child) {
+                        margin-top: 30px;
+                    }
+                    label {
+                        font-family: $primaryFont;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 14px;
+                        color: $black;
+                        text-transform: uppercase;
+                        display: block;
+                        margin-bottom: 10px;
+                        .gfield_required {
+                            display: none;
+                        }
+                    }
+                    .ginput_container {
+                        position: relative;
+                        input {
+                            border: 1px solid $black;
+                            border-radius: 1000px;
+                            width: 100%;
+                            padding: 12.5px 20px;
+                            font-family: $secondaryFont;
+                            background-color: transparent;
+                            font-size: 18px;
+                            line-height: 28.8px;
+                            color: $grey;
+                            box-sizing: border-box;
+                            transition: .3s;
+                            &:focus {
+                                background-color: $accent02--inactive;
+                                border: 1px solid $accent02--selected;
+                            }
+                        }
+                        &.verified {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                mask-image: url('../assets/images/tick.svg');
+                                -webkit-mask-image: url('../assets/images/tick.svg');
+                                mask-size: 16px 12px;
+                                -webkit-mask-size: 16px 12px;
+                                width: 16px;
+                                height: 12px;
+                                top: 50%;
+                                right: 20px;
+                                transform: translateY(-50%);
+                                background-color: $success;
+                            }
+                            input {
+                                border: 1px solid $success;
+                                padding-right: 46px;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                    .gravityform__error_message {
+                        font-family: $secondaryFont;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 25.6px;
+                        color: $error;
+                        display: block;
+                        margin-top: 10px;
+                    }
+                    &.gfield_visibility_hidden {
+                        display: none;
+                    }
+                    &.gravityform__field--error {
+                        label {
+                            color: $error;
+                        }
+                        .ginput_container {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                background-image: url('../assets/images/cross.svg');
+                                background-size: 16px 17px;
+                                width: 16px;
+                                height: 17px;
+                                top: 50%;
+                                right: 20px;
+                                transform: translateY(-50%);
+                            }
+                            input {
+                                border: 1px solid $error;
+                                padding-right: 46px;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .gform_footer {
+            .gravityform__button {
+                padding: 15px 50px;
+                background-color: transparent;
+                color: $white;
+                font-weight: 600;
+                font-family: $primaryFont;
+                text-transform: uppercase;
+                font-size: 14px;
+                line-height: 14px;
+                position: relative;
+                border-radius: 1000px;
+                text-decoration: none;
+                overflow: hidden;
+                display: inline-block;
+                transition: .3s;
+                border: 0;
+                cursor: pointer;
+                span {
+                    color: $white;
+                }
+                &::before {
+                    content: "";
+                    width: calc(100% - 2px);
+                    height: 100%;
+                    position: absolute;
+                    background-color: $accent01--active;
+                    border-radius: 1000px;
+                    display: inline-block;
+                    z-index: -5;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: .3s;
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: $accent02--active;
+                    border-radius: 1000px;
+                    display: inline-block;
+                    z-index: 0;
+                    transition: .3s;
+                    z-index: -3;
+                    transform: translateX(-95%);
+                }
+                &:hover {
+                    &::after {
+                        transform: translateX(-7.5%);
+                        background-color: $accent02--selected;
+                    }
+                }
+                &:active {
+                    &::after {
+                        transform: translateX(0);
+                        background-color: $accent02--selected;
+                    }
+                }
+            }
+        }
+    }
+}

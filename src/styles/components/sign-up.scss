@@ -122,18 +122,21 @@
                     }
                 }
                 &--finished {
+                    pointer-events: none;
                     span {
                         &::after {
                             background-color: $accent01--inactive;
                         }
                     }
                     &:last-child {
-                        &::before {
-                            color: $white;
-                        }
-                        &::after {
-                            height: 65px;
-                            background-color: $accent01--active;
+                        span {
+                            &::before {
+                                color: $white;
+                            }
+                            &::after {
+                                height: 65px;
+                                background-color: $accent01--active;
+                            }
                         }
                     }
                 }
@@ -300,6 +303,43 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                    .gform_wrapper {
+                        margin-top: 35px;
+                        .gform_body {
+                            padding-bottom: 60px;
+                            border-bottom: 1px solid $border;
+                        }
+                    }
+                    .email-box, .phone-box {
+                        display: flex;
+                        align-items: center;
+                        font-size: 20px;
+                        line-height: 32px;
+                        color: $grey;
+                        font-weight: 400;
+                        font-family: $secondaryFont;
+                        text-decoration: none;
+                        margin-top: 30px;
+                        span {
+                            width: 24px;
+                            height: 24px;
+                            background-size: 24px 24px;
+                            display: inline-block;
+                            margin-right: 15px;
+                        }
+                    }
+                    .email-box {
+                        span {
+                            background-image: url('../assets/images/email-icon.svg');
+                        }
+                    }
+                    .phone-box {
+                        padding-bottom: 60px;
+                        border-bottom: 1px solid $border;
+                        span {
+                            background-image: url('../assets/images/phone-icon.svg');
                         }
                     }
                     .button {

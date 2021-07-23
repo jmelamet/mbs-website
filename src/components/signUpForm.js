@@ -63,6 +63,7 @@ function handleSuccess({values, reset, confirmations}) {
 	steps[3].classList.add('visible')
 
 	for (let breadcrumb of breadcrumbs) {
+		breadcrumb.classList.remove('active')
 		breadcrumb.classList.add('breadcrumb--finished')
 	}
 }

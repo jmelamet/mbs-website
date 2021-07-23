@@ -56,6 +56,65 @@
             }
         }
     }
+    &--secondary {
+        font-family: $primaryFont;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+        color: $black;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: .2s;
+        padding-bottom: 12px;
+        display: inline-block;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: calc(100% - 7px);
+            transform: translateX(-50%);
+            width: 21px;
+            height: 7px;
+            background-color: $accent01--active;
+            border-radius: 1000px;
+            z-index: 1;
+            transition: .2s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: calc(100% - 7px);
+            transform: translateX(-50%);
+            width: 21px;
+            height: 7px;
+            background-color: $accent02;
+            border-radius: 1000px;
+            z-index: -1;
+            transition: .2s;
+        }
+        &:hover {
+            &::before {
+                left: calc(50% - 3px);
+                background-color: $accent01;
+            }
+            &::after {
+                left: calc(50% + 3px);
+            }
+        }
+        &:active {
+            &::before {
+                width: 42px;
+                background-color: $accent01--selected;
+                left: calc(50% - 3px);
+            }
+            &::after {
+                background-color: $accent02--selected;
+                left: calc(50% + 12px);
+            }
+        }
+    }
     &--disabled {
         pointer-events: none;
         color: $accent02--active;
