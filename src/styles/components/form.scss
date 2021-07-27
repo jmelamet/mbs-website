@@ -167,5 +167,19 @@
                 }
             }
         }
+        &--loading {
+            .gform_footer {
+                .gravityform__button {
+                    pointer-events: none;
+                    color: $accent02--active;
+                    &::before {
+                        background-color: $accent02--inactive;
+                    }
+                    &::after {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
     }
 }
