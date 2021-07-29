@@ -15,7 +15,10 @@ module.exports = {
 						username: `metronomestag`,
 						password: `nerdcow`,
 					}
-				}
+				},
+				type: {
+					BlockEditorContentNode: { exclude: true },
+				},
 			},
 		},
 		"gatsby-plugin-image",

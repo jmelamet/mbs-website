@@ -14,6 +14,18 @@ exports.createPages = async ({ graphql, actions }) => {
                     template {
                         templateName
                     }
+                    blocks {
+                        saveContent
+                        name
+                        attributesJSON
+                        order
+                        innerBlocks {
+                            saveContent
+                            name
+                            attributesJSON
+                            order
+                        }
+                    }
                 }
             }
         }
@@ -25,11 +37,13 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     const pages = result.data.allWpPage.nodes
-    let template = path.resolve(`./src/templates/page.js`)
+    let template
 
     pages.forEach(page => {
         if (page.template.templateName === "Sign Up") {
             template = path.resolve(`./src/templates/sign-up.js`)
+        } else {
+            template = path.resolve(`./src/templates/page.js`)
         }
         createPage({
             path: page.uri,
@@ -38,7 +52,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 id: page.id,
                 content: page.content,
                 title: page.title,
-                template: page.template.templateName
+                template: page.template.templateName,
+                blocks: page.blocks
             },
         })
     })
