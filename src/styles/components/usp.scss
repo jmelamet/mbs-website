@@ -1,0 +1,24 @@
+.usp {
+    &__heading {
+        line-height: 44px;
+        letter-spacing: -1px;
+    }
+    &__typing {
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: -1px;
+            color: $accent01--active;
+            font-family: $primaryFont;
+            span {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 44px;
+                letter-spacing: -1px;
+                color: $accent01--active;
+                font-family: $primaryFont;
+            }
+        }
+    }
+}

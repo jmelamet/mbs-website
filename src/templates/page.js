@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
 import Hero from '../components/hero'
-// import WPGBlocks from "react-gutenberg"
 
 export default class Page extends Component {
 	render() {
