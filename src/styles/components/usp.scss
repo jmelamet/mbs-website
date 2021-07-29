@@ -1,4 +1,7 @@
 .usp {
+    &__invisible {
+        display: none;
+    }
     &__heading {
         line-height: 44px;
         letter-spacing: -1px;
