@@ -17,6 +17,10 @@ h1 {
     line-height: 52px;
     color: $black;
     font-weight: 700;
+    @include max(910px) {
+        font-size: 32px;
+        line-height: 36px;
+    }
 }
 
 p {
@@ -25,4 +29,8 @@ p {
     line-height: 32px;
     color: $grey;
     font-weight: 400;
+    @include max(910px) {
+        font-size: 16px;
+        line-height: 25.6px;
+    }
 }

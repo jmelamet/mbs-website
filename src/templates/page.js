@@ -6,23 +6,23 @@ export default class Page extends Component {
 	render() {
         const data = this.props.pageContext
 		return (
-            <main>
-                <h1>{data.title}</h1>
-                <p>Skrt</p>
-                {data.blocks.map((block) => {
-                    if (block.name === 'nerdcow/hero') {
-                        return (
-                            <Hero data={block} key={`${block.name}_${block.order}`}/>
-                        )
-                    } else {
-                        return (
-                            <div key={`${block.name}_${block.order}`}>
-                                <div>{parse(block.saveContent)}</div>
-                            </div>
-                        )
-                    }
-                })}
-            </main>
+            <div className="container__wrapper">
+                <div className="container">
+                    {data.blocks.map((block) => {
+                        if (block.name === 'nerdcow/hero') {
+                            return (
+                                <Hero data={block} key={`${block.name}_${block.order}`}/>
+                            )
+                        } else {
+                            return (
+                                <div key={`${block.name}_${block.order}`}>
+                                    <div>{parse(block.saveContent)}</div>
+                                </div>
+                            )
+                        }
+                    })}
+                </div>
+            </div>
         )
     }
 }

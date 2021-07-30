@@ -1,13 +1,22 @@
 .container__wrapper {
     .container {
-        max-width: 960px;
+        max-width: 1480px;
         width: 100%;
         display: block;
         margin: 0 auto;
         padding: 0 30px;
-        @include max(1020px) {
+        @include max(1540px) {
             max-width: 100%;
             width: calc(100vw - 60px);
+        }
+    }
+    &.sign-up-template {
+        .container {
+            max-width: 960px;
+            @include max(1020px) {
+                max-width: 100%;
+                width: calc(100vw - 60px);
+            }
         }
     }
 }
