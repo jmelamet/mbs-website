@@ -9,22 +9,24 @@ export default class Page extends Component {
         const data = this.props.pageContext
 		return (
             <>
-                <Navigation/>
-                <div className="container__wrapper">
-                    <div className="container">
-                        {data.blocks.map((block) => {
-                            if (block.name === 'nerdcow/hero') {
-                                return (
-                                    <Hero data={block} key={`${block.name}_${block.order}`}/>
-                                )
-                            } else {
-                                return (
-                                    <div key={`${block.name}_${block.order}`}>
-                                        <div>{parse(block.saveContent)}</div>
-                                    </div>
-                                )
-                            }
-                        })}
+                <div className="wrapper">
+                    <Navigation/>
+                    <div className="container__wrapper">
+                        <div className="container">
+                            {data.blocks.map((block) => {
+                                if (block.name === 'nerdcow/hero') {
+                                    return (
+                                        <Hero data={block} key={`${block.name}_${block.order}`}/>
+                                    )
+                                } else {
+                                    return (
+                                        <div key={`${block.name}_${block.order}`}>
+                                            <div>{parse(block.saveContent)}</div>
+                                        </div>
+                                    )
+                                }
+                            })}
+                        </div>
                     </div>
                 </div>
             </>
