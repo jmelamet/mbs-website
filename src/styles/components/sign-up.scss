@@ -20,31 +20,6 @@
                 height: 64px;
             }
         }
-        .info-box {
-            padding: 15px;
-            border: 1px solid $border;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            img {
-                width: 14px;
-                height: 14px;
-                display: inline-block;
-                margin-right: 10px;
-            }
-            p {
-                font-size: 14px;
-                line-height: 14px;
-                font-weight: 600;
-                text-transform: uppercase;
-                font-family: $secondaryFont;
-                color: $black;
-                span {
-                    color: $accent01--active;
-                }
-            }
-        }
     }
     .sign-up {
         display: flex;
@@ -506,7 +481,6 @@
                     border-top: 1px solid $border;
                 }
                 ul {
-                    list-style: none;
                     @include max(1020px) {
                         display: flex;
                     }
@@ -514,24 +488,6 @@
                         flex-direction: column;
                     }
                     li {
-                        font-family: $secondaryFont;
-                        font-size: 20px;
-                        line-height: 32px;
-                        color: $grey;
-                        font-weight: 400;
-                        padding-left: 40px;
-                        position: relative;
-                        &::before {
-                            content: "";
-                            width: 24px;
-                            height: 24px;
-                            background-size: 24px 24px;
-                            background-image: url('../assets/images/bullet-tick.svg');
-                            display: inline-block;
-                            position: absolute;
-                            left: 0;
-                            top: 5px;
-                        }
                         &:not(:last-child) {
                             margin-bottom: 30px;
                             @include max(1020px) {

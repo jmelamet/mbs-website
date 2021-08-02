@@ -1,4 +1,5 @@
 .button {
+    white-space: nowrap;
     &--primary {
         padding: 20px 50px;
         background-color: transparent;
@@ -128,6 +129,9 @@
 }
 
 .wp-block-button {
+    .wp-block-button__link {
+        white-space: nowrap;
+    }
     &.is-style-secondary-button-left {
         .wp-block-button__link {
             font-family: $primaryFont;

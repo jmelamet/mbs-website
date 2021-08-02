@@ -1,4 +1,8 @@
 .container__wrapper {
+    @include max(990px) {
+        padding-top: 64px;
+    }
+
     .container {
         max-width: 1480px;
         width: 100%;
@@ -11,6 +15,9 @@
         }
     }
     &.sign-up-template {
+        @include max(990px) {
+            padding-top: 0;
+        }
         .container {
             max-width: 960px;
             @include max(1020px) {

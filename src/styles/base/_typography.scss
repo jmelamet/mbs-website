@@ -23,6 +23,14 @@ h1 {
     }
 }
 
+h2 {
+    font-family: $primaryFont;
+    font-size: 34px;
+    line-height: 44.2px;
+    color: $black;
+    font-weight: 700;
+}
+
 p {
     font-family: $secondaryFont;
     font-size: 20px;
@@ -32,5 +40,32 @@ p {
     @include max(910px) {
         font-size: 16px;
         line-height: 25.6px;
+    }
+}
+
+ul {
+    list-style: none;
+    li {
+        font-family: $secondaryFont;
+        font-size: 20px;
+        line-height: 32px;
+        color: $grey;
+        font-weight: 400;
+        padding-left: 40px;
+        position: relative;
+        &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background-size: 24px 24px;
+            background-image: url('../assets/images/bullet-tick.svg');
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
     }
 }
