@@ -14,17 +14,17 @@ export default class Page extends Component {
                     <div className="container__wrapper">
                         <div className="container">
                             {data.blocks.map((block) => {
-                                // if (block.name === 'nerdcow/hero') {
-                                //     return (
-                                //         <Hero data={block} key={`${block.name}_${block.order}`}/>
-                                //     )
-                                // } else {
+                                if (block.name === 'nerdcow/hero') {
+                                    return (
+                                        <Hero data={block} key={`${block.name}_${block.order}`}/>
+                                    )
+                                } else {
                                     return (
                                         <div key={`${block.name}_${block.order}`}>
                                             <div>{parse(block.saveContent)}</div>
                                         </div>
                                     )
-                                // }
+                                }
                             })}
                         </div>
                     </div>

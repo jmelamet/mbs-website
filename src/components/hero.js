@@ -28,17 +28,17 @@ export default class Hero extends Component {
                         <div className="hero-banner__inner">
                             <div className="hero-banner__text">
                                 {data.innerBlocks.map((block) => {
-                                    if (block.name === 'nerdcow/usp') {
-                                        return (
-                                            <Usp data={block} key={`${block.name}_${block.order}`}/>
-                                        )
-                                    } else {
+                                    // if (block.name === 'nerdcow/usp') {
+                                    //     return (
+                                    //         <Usp data={block} key={`${block.name}_${block.order}`}/>
+                                    //     )
+                                    // } else {
                                         return (
                                             <div key={`${block.name}_${block.order}`}>
                                                 <div>{parse(block.saveContent)}</div>
                                             </div>
                                         )
-                                    }
+                                    // }
                                 })}
                             </div>
                         </div>
