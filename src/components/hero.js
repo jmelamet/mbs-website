@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
-// import Usp from '../components/usp'
+import Usp from '../components/usp'
 
 export default class Hero extends Component {
     constructor(props) {
