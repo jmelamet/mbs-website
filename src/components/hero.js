@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
-import Usp from '../components/usp'
+// import Usp from '../components/usp'
 
 export default class Hero extends Component {
     constructor(props) {
@@ -48,17 +48,17 @@ export default class Hero extends Component {
                         <div className="hero-banner__inner">
                             <div className="hero-banner__text">
                                 {data.innerBlocks.map((block) => {
-                                    if (block.name === 'nerdcow/usp') {
-                                        return (
-                                            <Usp data={block} key={`${block.name}_${block.order}`}/>
-                                        )
-                                    } else {
+                                    // if (block.name === 'nerdcow/usp') {
+                                    //     return (
+                                    //         <Usp data={block} key={`${block.name}_${block.order}`}/>
+                                    //     )
+                                    // } else {
                                         return (
                                             <div key={`${block.name}_${block.order}`}>
                                                 <div>{parse(block.saveContent)}</div>
                                             </div>
                                         )
-                                    }
+                                    // }
                                 })}
                             </div>
                             <div className="hero-banner__images">
