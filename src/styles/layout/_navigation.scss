@@ -320,11 +320,28 @@
         }
         ul {
             margin-top: 20px;
+            list-style: none;
             li {
                 font-size: 16px;
                 line-height: 25.6px;
+                font-family: $secondaryFont;
+                color: $grey;
+                font-weight: 400;
+                padding-left: 40px;
+                position: relative;
                 &::before {
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-image: url('../assets/images/bullet-tick.svg');
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
                     top: 1px;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 20px;
                 }
             }
         }
