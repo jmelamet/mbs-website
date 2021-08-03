@@ -9,26 +9,31 @@ export default class Navigation extends Component {
 
         }
 
+        this.serviceButton = React.createRef()
         this.megaMenu = React.createRef()
         this.hamburger = React.createRef()
         this.primaryMobileNavigation = React.createRef()
         this.secondaryMobileNavigation = React.createRef()
         this.overlay = React.createRef()
+        this.desktopOverlay = React.createRef()
 
         this.handleServices = this.handleServices.bind(this)
         this.handleMobileServices = this.handleMobileServices.bind(this)
         this.handleMobileNavigation = this.handleMobileNavigation.bind(this)
     }
 
-    handleServices = (event) => {
-        const serviceButton = event.currentTarget
+    handleServices = () => {
+        const serviceButton = this.serviceButton.current
         const megaMenu = this.megaMenu.current
+        const desktopOverlay = this.desktopOverlay.current
 
         if (serviceButton.classList.contains('clicked')) {
             megaMenu.classList.remove('visible')
+            desktopOverlay.classList.remove('visible')
             serviceButton.classList.remove('clicked')
         } else {
             megaMenu.classList.add('visible')
+            desktopOverlay.classList.add('visible')
             serviceButton.classList.add('clicked')
         }
     }
@@ -127,7 +132,7 @@ export default class Navigation extends Component {
                                         {data.primary.menuItems.nodes.map((menuItem) => {
                                             if (menuItem.label === "Services") {
                                                 return (
-                                                    <span key={menuItem.id} className="navigation__item navigation__services" onClick={(event) => this.handleServices(event)}>{menuItem.label}</span>
+                                                    <span key={menuItem.id} className="navigation__item navigation__services" ref={this.serviceButton} onClick={() => this.handleServices()}>{menuItem.label}</span>
                                                 )
                                             } else {
                                                 return (
@@ -222,6 +227,7 @@ export default class Navigation extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <div className="desktop__overlay" ref={this.desktopOverlay} onClick={() => this.handleServices()}></div>
                             <div className="mobile-menu">
                                 <div className="mobile-menu__primary" ref={this.primaryMobileNavigation}>
                                     <Link to="/" className="mobile-menu__logo"> </Link>

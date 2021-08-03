@@ -467,6 +467,23 @@
     }
 }
 
+.desktop__overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    background-color: rgba(72, 72, 72, 0.5);
+    z-index: 190;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    &.visible {
+        pointer-events: initial;
+        opacity: 1;
+    }
+}
+
 .hamburger__wrapper {
     width: 24px;
     height: 24px;

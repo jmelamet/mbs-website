@@ -12,6 +12,7 @@
         transform: rotate(45deg);
         background: $accent01--inactive;
         filter: blur(50px);
+        opacity: 0.7;
         display: inline-block;
         height: 220px;
         width: 720px;
@@ -86,7 +87,7 @@
                 height: 400px;
                 width: 1000px;
                 position: absolute;
-                opacity: 0.75;
+                opacity: 0.5;
                 z-index: -1;
                 @include max(1420px) {
                     width: 750px;
@@ -400,6 +401,7 @@
             transform: rotate(45deg);
             background: $accent02--active;
             filter: blur(50px);
+            opacity: 0.5;
             display: inline-block;
             height: 220px;
             width: 720px;
