@@ -11,7 +11,7 @@
         top: -100px;
         transform: rotate(45deg);
         background: $accent01--inactive;
-        // filter: blur(200px);
+        filter: blur(50px);
         display: inline-block;
         height: 220px;
         width: 720px;
@@ -81,7 +81,7 @@
                 top: 50%;
                 transform: translate(-50%, -50%) rotate(-30deg);
                 background: $accent02--active;
-                // filter: blur(200px);
+                filter: blur(50px);
                 display: inline-block;
                 height: 400px;
                 width: 1000px;
@@ -399,7 +399,7 @@
             top: 400px;
             transform: rotate(45deg);
             background: $accent02--active;
-            // filter: blur(200px);
+            filter: blur(50px);
             display: inline-block;
             height: 220px;
             width: 720px;
