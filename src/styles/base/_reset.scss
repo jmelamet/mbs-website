@@ -49,7 +49,8 @@ body {
 .wrapper {
 	overflow-y: hidden;
 	overflow-x: hidden;
-	width: 100vw;
+	width: 100%;
+	max-width: 100vw;
 	min-height: 100vh;
 	height: 100%;
 }

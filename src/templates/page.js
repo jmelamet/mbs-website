@@ -20,9 +20,7 @@ export default class Page extends Component {
                                     )
                                 } else {
                                     return (
-                                        <div key={`${block.name}_${block.order}`}>
-                                            <div>{parse(block.saveContent)}</div>
-                                        </div>
+                                        <div key={`${block.name}_${block.order}`}>{parse(block.saveContent)}</div>
                                     )
                                 }
                             })}
