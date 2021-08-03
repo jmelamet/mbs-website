@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
-// import Typewriter from 'typewriter-effect'
+import Typewriter from 'typewriter-effect'
 
 export default class Hero extends Component {
     constructor(props) {
@@ -39,7 +39,7 @@ export default class Hero extends Component {
                 <h1 className="usp__heading">{attributes.text}</h1>
                 <div className="usp__typing" >
                     <h1>
-                        {/* <Typewriter
+                        <Typewriter
                             options={{
                                 strings: this.state.typingElements,
                                 autoStart: true,
@@ -48,7 +48,7 @@ export default class Hero extends Component {
                                 deleteSpeed: 25,
                                 pauseFor: 1500
                             }}
-                        /> */}
+                        />
                     </h1>
                 </div>
             </div>
