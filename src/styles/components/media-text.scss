@@ -71,11 +71,6 @@
         }
         .wp-block-media-text__media {
             mask-image: url('../assets/images/media-text-mask01.svg');
-            // @include max(1220px) {
-            //     mask-size: 542px 724px;
-            //     width: 542px;
-            //     height: 724px;
-            // }
             &::after {
                 content: "";
                 width: 100%;

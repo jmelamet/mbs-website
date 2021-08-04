@@ -3,6 +3,7 @@ import parse from 'html-react-parser'
 import Seo from 'gatsby-plugin-wpgraphql-seo';
 
 import Hero from '../components/hero'
+import Boxes from '../components/boxes'
 import Navigation from '../components/navigation'
 
 export default class Page extends Component {
@@ -20,6 +21,10 @@ export default class Page extends Component {
                                 if (block.name === 'nerdcow/hero') {
                                     return (
                                         <Hero data={block} key={`${block.name}_${block.order}`}/>
+                                    )
+                                } else if (block.name === 'nerdcow/box-wrap') {
+                                    return (
+                                        <Boxes data={block} key={`${block.name}_${block.order}`}/>
                                     )
                                 } else {
                                     return (

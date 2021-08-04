@@ -1,0 +1,121 @@
+.boxes-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 350px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include max(540px) {
+        max-width: 100%;
+    }
+    &:not(:last-child) {
+        margin-bottom: 120px;
+    }
+    &.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-column-gap: 30px;
+        grid-auto-rows: auto;
+        max-width: 730px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @include max(540px) {
+            grid-template-columns: minmax(0, 1fr);
+            grid-column-gap: 0;
+            grid-row-gap: 30px;
+        }
+    }
+    &.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-column-gap: 30px;
+        grid-auto-rows: auto;
+        max-width: 1110px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @include max(780px) {
+            grid-template-columns: minmax(0, 1fr);
+            grid-column-gap: 0;
+            grid-row-gap: 30px;
+            max-width: 350px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include max(540px) {
+            max-width: 100%;
+        }
+    }
+    &.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column-gap: 30px;
+        grid-auto-rows: auto;
+        max-width: 100%;
+        @include max(1040px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+            max-width: 730px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include max(540px) {
+            grid-template-columns: minmax(0, 1fr);
+            grid-column-gap: 0;
+        }
+    }
+    .box {
+        background-color: $accent02--inactive;
+        border: 1px solid $accent02--inactive;
+        border-radius: 4px;
+        padding: 30px;
+        &.box--border-blue {
+            background-color: transparent;
+            border: 1px solid $accent02--active;
+        }
+        &.box--filled-red {
+            background-color: $accent01--inactive;
+            border: 1px solid $accent01--inactive;
+        }
+        &.box--border-red {
+            background-color: transparent;
+            border: 1px solid $accent01--active;
+        }
+        &.box--link {
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 100px;
+            text-decoration: none;
+            &::after {
+                content: "";
+                mask-image: url('../assets/images/arrow-right.svg');
+                -webkit-mask-image: url('../assets/images/arrow-right.svg');
+                mask-size: 24px 24px;
+                -webkit-mask-size: 24px 27px;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                right: 30px;
+                bottom: 38px;
+                background-color: $accent02--selected;
+            }
+            &.box--filled-red, &.box--border-red {
+                &::after {
+                    background-color: $accent01--active;
+                }
+            }
+        }
+        .wp-block-image + h3 {
+            margin-top: 30px;
+        }
+        h3 + p {
+            margin-top: 30px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25.6px;
+            color: $black;
+        }
+    }
+}
