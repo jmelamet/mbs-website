@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-$accent02--active: #A0C6EC;
 $accent02--inactive: #EEF5FC;
-$accent02--selected: #448FDA;
+$accent02--active: #A0C6EC;
 $accent02: #77ADE4;
-$border: #F3F3F3;
-$accent01--active: #AE2338;
+$accent02--selected: #448FDA;
+
 $accent01--inactive: #F6D5DB;
-$accent01--selected: #55111B;
+$accent01--active: #AE2338;
 $accent01: #881B2B;
+$accent01--selected: #55111B;
+
+$border: #F3F3F3;
 $black: #000000;
 $white: #FFFFFF;
 $grey: #484848;

@@ -50,3 +50,35 @@ p {
         line-height: 25.6px;
     }
 }
+
+.has-red-inactive-color {
+    color: $accent01--inactive;
+}
+
+.has-red-active-color {
+    color: $accent01--active;
+}
+
+.has-red-hover-color {
+    color: $accent01;
+}
+
+.has-red-selected-color {
+    color: $accent01--selected;
+}
+
+.has-blue-inactive-color {
+    color: $accent02--inactive;
+}
+
+.has-blue-active-color {
+    color: $accent02--active;
+}
+
+.has-blue-hover-color {
+    color: $accent02;
+}
+
+.has-blue-selected-color {
+    color: $accent02--selected;
+}
