@@ -167,7 +167,7 @@
                             left: calc(100% - 155px);
                             bottom: calc(100% - 110px);
                             @include max(580px) {
-                                display: block !important;
+                                opacity: 1;
                                 left: calc(100% - 400px);
                                 bottom: calc(100% + 30px);
                             }
