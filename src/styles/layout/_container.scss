@@ -1,8 +1,9 @@
 .container__wrapper {
+    margin-top: 130px;
+    transition: .3s ease-in-out;
     @include max(990px) {
-        padding-top: 64px;
+        margin-top: 94px;
     }
-
     .container {
         max-width: 1480px;
         width: 100%;
@@ -15,6 +16,7 @@
         }
     }
     &.sign-up-template {
+        margin-top: 0;
         @include max(990px) {
             padding-top: 0;
         }
@@ -25,5 +27,8 @@
                 width: calc(100vw - 60px);
             }
         }
+    }
+    &.blurred {
+        filter: blur(6px);
     }
 }

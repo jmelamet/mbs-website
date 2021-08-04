@@ -4,6 +4,7 @@
     align-items: center;
     @include max(990px) {
         min-height: calc(100vh - 64px);
+        position: relative;
     }
     &::after {
         content: "";
@@ -18,6 +19,9 @@
         width: 720px;
         position: absolute;
         z-index: -10;
+        @include max(990px) {
+            top: -200px;
+        }
     }
     &__inner {
         display: flex;
@@ -291,9 +295,11 @@
                         position: absolute;
                         background-color: $white;
                         cursor: pointer;
+                        animation: pulse-animation 1.7s infinite;
+                        box-shadow: 0px 0px 1px 1px $accent01--inactive;
                     }
                     .tooltip {
-                        display: none;
+                        // display: none;
                         position: absolute;
                         background-color: $white;
                         padding: 30px;
@@ -302,8 +308,11 @@
                         width: 100%;
                         border-radius: 4px;
                         z-index: 200;
+                        pointer-events: none;
+                        opacity: 0;
+                        transition: .3s ease-in-out;
                         &.visible {
-                            display: block;
+                            opacity: 1;
                         }
                         &::before {
                             content: "";
@@ -424,5 +433,14 @@
                 }
             }
         }
+    }
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(85, 17, 27, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(85, 17, 27, 0);
     }
 }

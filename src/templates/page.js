@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
+import Seo from 'gatsby-plugin-wpgraphql-seo';
 
 import Hero from '../components/hero'
 import Navigation from '../components/navigation'
@@ -7,8 +8,10 @@ import Navigation from '../components/navigation'
 export default class Page extends Component {
 	render() {
         const data = this.props.pageContext
+
 		return (
             <>
+                <Seo post={data} />
                 <div className="wrapper">
                     <Navigation/>
                     <div className="container__wrapper">

@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import Seo from 'gatsby-plugin-wpgraphql-seo';
+
 import SignUpForm from "../components/signUpForm"
-
 import informationIcon from "../assets/images/information-icon.svg"
-
 import animateScrollTo from "animated-scroll-to"
 
 export default class SignUp extends Component {
@@ -173,163 +173,168 @@ export default class SignUp extends Component {
     }
 
 	render() {
+        const data = this.props.pageContext
+
         return (
-            <div className="container__wrapper sign-up-template">
-                <div className="container">
-                    <div className="sign-up-template__header">
-                        <Link to="/" className="logo"></Link>
-                        <a href="tel:0207 946 0496" className="info-box">
-                            <img src={informationIcon}/>
-                            <p><span>Questions?</span> 0207 946 0496</p>
-                        </a>
-                    </div>
-                    <div className="sign-up">
-                        <div className="sign-up__breadcrumbs">
-                            <div className="breadcrumb active" role="button" onClick={(event) => this.handleBreadcrumb(event, 0)}>
-                                <span></span>
-                                <p>Services</p>
-                            </div>
-                            <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 1)}>
-                                <span className="second"></span>
-                                <p>Requirements</p>
-                            </div>
-                            <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 2)}>
-                                <span className="third"></span>
-                                <p>Contact details</p>
-                            </div>
-                            <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 3)}>
-                                <span className="fourth"></span>
-                                <p>Confirmation</p>
-                            </div>
+            <>
+                <Seo post={data} />
+                <div className="container__wrapper sign-up-template">
+                    <div className="container">
+                        <div className="sign-up-template__header">
+                            <Link to="/" className="logo"></Link>
+                            <a href="tel:0207 946 0496" className="info-box">
+                                <img src={informationIcon}/>
+                                <p><span>Questions?</span> 0207 946 0496</p>
+                            </a>
                         </div>
-                        <div className="sign-up__content">
-                            <div className="sign-up__steps">
-                                <div className="step visible">
-                                    <p className="label">Step 1/4</p>
-                                    <h1>What services do you need?</h1>
-                                    <p>Mix & match services that you need. We’ll nail down the specifics at the next step. If you’re unsure what to pick, we will help you identify gaps in your team.</p>
-                                    <div className="sign-up__grid services">
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Accounting", 0)}>
-                                            <span className="checkbox"></span>
-                                            <p>Accounting</p>
-                                        </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Administration & support", 1)}>
-                                            <span className="checkbox"></span>
-                                            <p>Administration and support</p>
-                                        </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Compliance management", 2)}>
-                                            <span className="checkbox"></span>
-                                            <p>Compliance management</p>
-                                        </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Risk assessment", 3)}>
-                                            <span className="checkbox"></span>
-                                            <p>Risk assessment</p>
-                                        </div>
-                                        <div className="services__item" onClick={(event) => this.handleService(event, "Not sure", 4)}>
-                                            <span className="checkbox"></span>
-                                            <p>Not sure</p>
-                                        </div>
-                                    </div>
-                                    <a href="#" className="button button--primary button--next button--disabled" ref={this.firstButton} onClick={(event) => this.handleSteps(event)}>Go to the next step</a>
+                        <div className="sign-up">
+                            <div className="sign-up__breadcrumbs">
+                                <div className="breadcrumb active" role="button" onClick={(event) => this.handleBreadcrumb(event, 0)}>
+                                    <span></span>
+                                    <p>Services</p>
                                 </div>
-                                <div className="step">
-                                    <p className="label">Step 2/4</p>
-                                    <h1>Choose specific services</h1>
-                                    <p>If you’re unsure, our consultant will help you figure it out.</p>
-                                    <div className="specifics__items">
-                                        <div className={`specifics__service${this.state["Accounting"] === true ? ' visible' : ''}`}>
-                                            <p className="label">Accounting</p>
-                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Accounts & tax")}>
-                                                <span className="checkbox"></span>
-                                                <p>Accounts & tax</p>
-                                            </div>
-                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Payroll")}>
-                                                <span className="checkbox"></span>
-                                                <p>Payroll</p>
-                                            </div>
-                                            <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "VAT returns")}>
-                                                <span className="checkbox"></span>
-                                                <p>VAT returns</p>
-                                            </div>
-                                        </div>
-                                        <div className={`specifics__service${this.state["Administration & support"] === true ? ' visible' : ''}`}>
-                                            <p className="label">Administration & support</p>
-                                            <div className="specifics__item 1" role="button" onClick={(event) => this.handleSpecific(event, "Administration 1")}>
-                                                <span className="checkbox"></span>
-                                                <p>Administration 1</p>
-                                            </div>
-                                        </div>
-                                        <div className={`specifics__service${this.state["Compliance management"] === true ? ' visible' : ''}`}>
-                                            <p className="label">Compliance management</p>
-                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 1")}>
-                                                <span className="checkbox"></span>
-                                                <p>Subservice 1</p>
-                                            </div>
-                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 2")}>
-                                                <span className="checkbox"></span>
-                                                <p>Subservice 2</p>
-                                            </div>
-                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 3")}>
-                                                <span className="checkbox"></span>
-                                                <p>Subservice 3</p>
-                                            </div>
-                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 4")}>
-                                                <span className="checkbox"></span>
-                                                <p>Subservice 4</p>
-                                            </div>
-                                            <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 5")}>
-                                                <span className="checkbox"></span>
-                                                <p>Subservice 5</p>
-                                            </div>
-                                        </div>
-                                        <div className={`specifics__service${this.state["Risk assessment"] === true ? ' visible' : ''}`}>
-                                            <p className="label">Risk assessment</p>
-                                            <div className="specifics__item 3" role="button" onClick={(event) => this.handleSpecific(event, "Compliance 1")}>
-                                                <span className="checkbox"></span>
-                                                <p>Compliance 1</p>
-                                            </div>
-                                        </div>
-                                        <div className={`specifics__service${this.state["Not sure"] === true ? ' visible' : ''}`}>
-                                            <p className="label">Not sure</p>
-                                            <div className="specifics__item 4" role="button" onClick={(event) => this.handleSpecific(event, "Something 1")}>
-                                                <span className="checkbox"></span>
-                                                <p>Something 1</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="#" className="button button--primary button--next button--disabled" ref={this.secondButton} onClick={(event) => this.handleSteps(event)}>Go to the next step</a>
+                                <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 1)}>
+                                    <span className="second"></span>
+                                    <p>Requirements</p>
                                 </div>
-                                <div className="step">
-                                    <p className="label">Step 3/4</p>
-                                    <h1>Please tell us more about yourself</h1>
-                                    <SignUpForm/>
+                                <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 2)}>
+                                    <span className="third"></span>
+                                    <p>Contact details</p>
                                 </div>
-                                <div className="step">
-                                    <p className="label">Step 4/4</p>
-                                    <h1>Thank you, <span className="customer-name"></span>!</h1>
-                                    <p>We’ll get in touch with you to learn more about your startup and discuss details within 48 hours.</p>
-                                    <div className="sign-up__contact">
-                                        <a className="email-box" href="mailto:help@mbs.com">
-                                            <span></span>help@mbs.com
-                                        </a>
-                                        <a className="phone-box" href="tel:0207 946 0496">
-                                            <span></span>0207 946 0496
-                                        </a>
-                                    </div>
-                                    <Link to="/" className="button button--secondary">Go to home page</Link>
+                                <div className="breadcrumb" role="button" onClick={(event) => this.handleBreadcrumb(event, 3)}>
+                                    <span className="fourth"></span>
+                                    <p>Confirmation</p>
                                 </div>
                             </div>
-                            <div className="sign-up__benefits">
-                                <ul>
-                                    <li>Our consultant will call you back within 48 hours</li>
-                                    <li>We’ll help you find any other areas for improvement</li>
-                                    <li>Pick staff roles & discuss specific requirements with us</li>
-                                </ul>
+                            <div className="sign-up__content">
+                                <div className="sign-up__steps">
+                                    <div className="step visible">
+                                        <p className="label">Step 1/4</p>
+                                        <h1>What services do you need?</h1>
+                                        <p>Mix & match services that you need. We’ll nail down the specifics at the next step. If you’re unsure what to pick, we will help you identify gaps in your team.</p>
+                                        <div className="sign-up__grid services">
+                                            <div className="services__item" onClick={(event) => this.handleService(event, "Accounting", 0)}>
+                                                <span className="checkbox"></span>
+                                                <p>Accounting</p>
+                                            </div>
+                                            <div className="services__item" onClick={(event) => this.handleService(event, "Administration & support", 1)}>
+                                                <span className="checkbox"></span>
+                                                <p>Administration and support</p>
+                                            </div>
+                                            <div className="services__item" onClick={(event) => this.handleService(event, "Compliance management", 2)}>
+                                                <span className="checkbox"></span>
+                                                <p>Compliance management</p>
+                                            </div>
+                                            <div className="services__item" onClick={(event) => this.handleService(event, "Risk assessment", 3)}>
+                                                <span className="checkbox"></span>
+                                                <p>Risk assessment</p>
+                                            </div>
+                                            <div className="services__item" onClick={(event) => this.handleService(event, "Not sure", 4)}>
+                                                <span className="checkbox"></span>
+                                                <p>Not sure</p>
+                                            </div>
+                                        </div>
+                                        <a href="#" className="button button--primary button--next button--disabled" ref={this.firstButton} onClick={(event) => this.handleSteps(event)}>Go to the next step</a>
+                                    </div>
+                                    <div className="step">
+                                        <p className="label">Step 2/4</p>
+                                        <h1>Choose specific services</h1>
+                                        <p>If you’re unsure, our consultant will help you figure it out.</p>
+                                        <div className="specifics__items">
+                                            <div className={`specifics__service${this.state["Accounting"] === true ? ' visible' : ''}`}>
+                                                <p className="label">Accounting</p>
+                                                <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Accounts & tax")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Accounts & tax</p>
+                                                </div>
+                                                <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "Payroll")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Payroll</p>
+                                                </div>
+                                                <div className="specifics__item 0" role="button" onClick={(event) => this.handleSpecific(event, "VAT returns")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>VAT returns</p>
+                                                </div>
+                                            </div>
+                                            <div className={`specifics__service${this.state["Administration & support"] === true ? ' visible' : ''}`}>
+                                                <p className="label">Administration & support</p>
+                                                <div className="specifics__item 1" role="button" onClick={(event) => this.handleSpecific(event, "Administration 1")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Administration 1</p>
+                                                </div>
+                                            </div>
+                                            <div className={`specifics__service${this.state["Compliance management"] === true ? ' visible' : ''}`}>
+                                                <p className="label">Compliance management</p>
+                                                <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 1")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Subservice 1</p>
+                                                </div>
+                                                <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 2")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Subservice 2</p>
+                                                </div>
+                                                <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 3")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Subservice 3</p>
+                                                </div>
+                                                <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 4")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Subservice 4</p>
+                                                </div>
+                                                <div className="specifics__item 2" role="button" onClick={(event) => this.handleSpecific(event, "Subservice 5")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Subservice 5</p>
+                                                </div>
+                                            </div>
+                                            <div className={`specifics__service${this.state["Risk assessment"] === true ? ' visible' : ''}`}>
+                                                <p className="label">Risk assessment</p>
+                                                <div className="specifics__item 3" role="button" onClick={(event) => this.handleSpecific(event, "Compliance 1")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Compliance 1</p>
+                                                </div>
+                                            </div>
+                                            <div className={`specifics__service${this.state["Not sure"] === true ? ' visible' : ''}`}>
+                                                <p className="label">Not sure</p>
+                                                <div className="specifics__item 4" role="button" onClick={(event) => this.handleSpecific(event, "Something 1")}>
+                                                    <span className="checkbox"></span>
+                                                    <p>Something 1</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" className="button button--primary button--next button--disabled" ref={this.secondButton} onClick={(event) => this.handleSteps(event)}>Go to the next step</a>
+                                    </div>
+                                    <div className="step">
+                                        <p className="label">Step 3/4</p>
+                                        <h1>Please tell us more about yourself</h1>
+                                        <SignUpForm/>
+                                    </div>
+                                    <div className="step">
+                                        <p className="label">Step 4/4</p>
+                                        <h1>Thank you, <span className="customer-name"></span>!</h1>
+                                        <p>We’ll get in touch with you to learn more about your startup and discuss details within 48 hours.</p>
+                                        <div className="sign-up__contact">
+                                            <a className="email-box" href="mailto:help@mbs.com">
+                                                <span></span>help@mbs.com
+                                            </a>
+                                            <a className="phone-box" href="tel:0207 946 0496">
+                                                <span></span>0207 946 0496
+                                            </a>
+                                        </div>
+                                        <Link to="/" className="button button--secondary">Go to home page</Link>
+                                    </div>
+                                </div>
+                                <div className="sign-up__benefits">
+                                    <ul>
+                                        <li>Our consultant will call you back within 48 hours</li>
+                                        <li>We’ll help you find any other areas for improvement</li>
+                                        <li>Pick staff roles & discuss specific requirements with us</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }

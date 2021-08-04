@@ -1,9 +1,19 @@
 .navigation {
     padding: 18px 0;
     z-index: 300;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: .3s ease-in-out;
     @include max(990px) {
         display: none;
+    }
+    &.navigation--scrolled {
+        background-color: $white;
+    }
+    &.navigation--mega-menu {
+        background-color: transparent;
     }
     &__container {
         display: flex;
@@ -144,7 +154,7 @@
 }
 
 .mega-menu {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;

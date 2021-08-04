@@ -6,7 +6,8 @@ export default class Navigation extends Component {
     constructor() {
         super()
         this.state = {
-
+            hasScrolled: false,
+            isMegaMenuOpen: false
         }
 
         this.serviceButton = React.createRef()
@@ -20,20 +21,50 @@ export default class Navigation extends Component {
         this.handleServices = this.handleServices.bind(this)
         this.handleMobileServices = this.handleMobileServices.bind(this)
         this.handleMobileNavigation = this.handleMobileNavigation.bind(this)
+        this.trackScrolling = this.trackScrolling.bind(this)
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', this.trackScrolling);
+    }
+      
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+    }
+
+    trackScrolling = () => {
+        if (window.pageYOffset < 20) {
+            this.setState({
+                hasScrolled: false
+            })
+        } else {
+            this.setState({
+                hasScrolled: true
+            })
+        }
     }
 
     handleServices = () => {
         const serviceButton = this.serviceButton.current
         const megaMenu = this.megaMenu.current
         const desktopOverlay = this.desktopOverlay.current
+        const container = document.getElementsByClassName('container__wrapper')
 
         if (serviceButton.classList.contains('clicked')) {
+            this.setState({
+                isMegaMenuOpen: false
+            })
             megaMenu.classList.remove('visible')
             desktopOverlay.classList.remove('visible')
+            container[0].classList.remove('blurred')
             serviceButton.classList.remove('clicked')
         } else {
+            this.setState({
+                isMegaMenuOpen: true
+            })
             megaMenu.classList.add('visible')
             desktopOverlay.classList.add('visible')
+            container[0].classList.add('blurred')
             serviceButton.classList.add('clicked')
         }
     }
@@ -56,21 +87,26 @@ export default class Navigation extends Component {
         const primaryMobileNavigation = this.primaryMobileNavigation.current
         const secondaryMobileNavigation = this.secondaryMobileNavigation.current
         const overlay = this.overlay.current
+        const container = document.getElementsByClassName('container__wrapper')
 
         if (hamburger.classList.contains('clicked')) {
             primaryMobileNavigation.classList.remove('visible')
             primaryMobileNavigation.classList.remove('behind')
             secondaryMobileNavigation.classList.remove('visible')
             overlay.classList.remove('visible')
+            container[0].classList.remove('blurred')
             hamburger.classList.remove('clicked')
         } else {
             primaryMobileNavigation.classList.add('visible')
             overlay.classList.add('visible')
+            container[0].classList.add('blurred')
             hamburger.classList.add('clicked')
         }
     }
 
     render() {
+        const state = this.state
+
         return (
             <>
                 <StaticQuery
@@ -125,7 +161,7 @@ export default class Navigation extends Component {
                     `}
                     render={data => (
                         <>
-                            <div className="navigation">
+                            <div className={`navigation ${state.hasScrolled ? "navigation--scrolled" : ""} ${state.isMegaMenuOpen ? "navigation--mega-menu" : ""}`}>
                                 <div className="navigation__container">
                                     <Link to="/" className="navigation__logo"> </Link>
                                     <div className="navigation__items">
