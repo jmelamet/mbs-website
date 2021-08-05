@@ -1,5 +1,5 @@
 .hero-banner {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 130px);
     display: flex;
     align-items: center;
     @include max(990px) {
@@ -8,19 +8,20 @@
     }
     &::after {
         content: "";
-        left: -370px;
-        top: -100px;
-        transform: rotate(45deg);
-        background: $accent01--inactive;
-        filter: blur(50px);
-        opacity: 0.7;
-        display: inline-block;
-        height: 220px;
-        width: 720px;
+        background-image: url('../assets/images/hero-left-red.svg');
+        left: -250px;
+        top: -250px;
+        width: 770px;
+        height: 770px;
+        background-size: 770px 770px;
         position: absolute;
         z-index: -10;
-        @include max(990px) {
-            top: -200px;
+        @include max(1160px) {
+            background-image: url('../assets/images/hero-left-red-tablet.svg');
+            background-size: 690px 901px;
+            width: 690px;
+            height: 901px;
+            top: -400px;
         }
     }
     &__inner {
@@ -82,26 +83,17 @@
             }
             &::after {
                 content: "";
+                background-image: url('../assets/images/hero-pills-blue.svg');
+                background-size: 1299px 1112px;
                 left: 50%;
                 top: 50%;
-                transform: translate(-50%, -50%) rotate(-30deg);
-                background: $accent02--active;
-                filter: blur(50px);
+                transform: translate(-50%, -50%);
                 display: inline-block;
-                height: 400px;
-                width: 1000px;
+                height: 1112px;
+                width: 1299px;
                 position: absolute;
-                opacity: 0.5;
                 z-index: -1;
-                @include max(1420px) {
-                    width: 750px;
-                }
-                @include max(1160px) {
-                    width: 500px;
-                }
-                @include max(580px) {
-                    width: 250px;
-                }
+                background-repeat: no-repeat;
             }
             .hero-image {
                 z-index: 100;
@@ -371,7 +363,10 @@
     }
     &.hero-banner--service {
         &::after {
-            background: $accent02--active;
+            background-image: url('../assets/images/hero-left-blue.svg');
+            @include max(1160px) {
+                background-image: url('../assets/images/hero-left-blue-tablet.svg');
+            }
         }
         .hero-banner__inner {
             .hero-banner__text {
@@ -381,8 +376,7 @@
             }
             .hero-banner__images {
                 &::after {
-                    background: $accent01--inactive;
-                    opacity: 0.8;
+                    background-image: url('../assets/images/hero-pills-red.svg');
                 }
                 .hero-image {
                     &::after {
@@ -401,21 +395,21 @@
     &.hero-banner--plain {
         min-height: 440px;
         &::after {
-            background: $accent01--inactive;
+            background-image: url('../assets/images/hero-left-blue.svg');
+            @include max(1160px) {
+                background-image: url('../assets/images/hero-left-blue-tablet.svg');
+            }
         }
         &::before {
             content: "";
-            right: -370px;
-            top: 400px;
-            transform: rotate(45deg);
-            background: $accent02--active;
-            filter: blur(50px);
-            opacity: 0.5;
-            display: inline-block;
-            height: 220px;
-            width: 720px;
+            background-image: url('../assets/images/hero-right-red.svg');
+            right: -250px;
+            top: 250px;
+            width: 770px;
+            height: 770px;
+            background-size: 770px 770px;
             position: absolute;
-            z-index: -1;
+            z-index: -10;
         }
         .hero-banner__inner {
             .hero-banner__text {

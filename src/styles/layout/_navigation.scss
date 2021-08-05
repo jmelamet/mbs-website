@@ -179,14 +179,13 @@
     }
     &::before {
         content: "";
-        left: 0;
+        background-image: url('../assets/images/navigation-background.svg');
+        background-size: 933px 1032px;
+        width: 933px;
+        height: 1032px;
+        left: -200px;
         top: 50%;
         transform: translateY(-50%);
-        background: $accent02--inactive;
-        filter: blur(200px);
-        display: inline-block;
-        height: calc(100% - 60px);
-        width: 30vw;
         position: absolute;
         z-index: -10;
         @include max(1280px) {
