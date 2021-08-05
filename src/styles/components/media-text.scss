@@ -329,6 +329,7 @@
     }
     &__media {
         mask-image: url('../assets/images/media-text-mask01.svg');
+        shape-rendering: geometricPrecision;
         mask-repeat: no-repeat;
         width: 100%;
         height: auto;
