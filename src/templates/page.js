@@ -16,7 +16,7 @@ export default class Page extends Component {
                 <div className="wrapper">
                     <Navigation/>
                     <div className="container__wrapper">
-                        <div className="container">
+                        <div className="container container--page">
                             {data.blocks.map((block) => {
                                 if (block.name === 'nerdcow/hero') {
                                     return (
