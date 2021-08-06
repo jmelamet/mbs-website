@@ -41,8 +41,10 @@
             max-width: 490px;
             width: 100%;
             margin-right: 30px;
+            margin-bottom: 30px;
             @include max(690px) {
                 max-width: 35vw;
+                margin-bottom: 0;
             }
             @include max(650px) {
                 align-self: flex-start;

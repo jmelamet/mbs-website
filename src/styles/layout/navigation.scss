@@ -53,6 +53,7 @@
                 position: relative;
                 padding: 0 15px;
                 text-decoration: none;
+                white-space: nowrap;
                 @include max(1280px) {
                     padding: 0 10px;
                 }
