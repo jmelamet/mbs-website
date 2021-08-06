@@ -53,6 +53,9 @@
             }
             p {
                 margin: 60px 0 30px;
+                & + .accordion {
+                    margin-top: 90px;
+                }
                 @include max(910px) {
                     max-width: 340px;
                 }

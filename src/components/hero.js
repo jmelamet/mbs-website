@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import parse from 'html-react-parser'
 import Usp from '../components/usp'
+import Accordion from '../components/accordion'
 
 export default class Hero extends Component {
     constructor(props) {
@@ -32,6 +33,10 @@ export default class Hero extends Component {
                                         return (
                                             <Usp data={block} key={`${block.name}_${block.order}`}/>
                                         )
+                                    } else if (block.name === 'nerdcow/accordion') {
+                                        return (
+                                            <Accordion data={block} key={`${block.name}_${block.order}`}/>
+                                        )
                                     } else {
                                         return (
                                             <div key={`${block.name}_${block.order}`}>
@@ -51,6 +56,10 @@ export default class Hero extends Component {
                                     if (block.name === 'nerdcow/usp') {
                                         return (
                                             <Usp data={block} key={`${block.name}_${block.order}`}/>
+                                        )
+                                    } else if (block.name === 'nerdcow/accordion') {
+                                        return (
+                                            <Accordion data={block} key={`${block.name}_${block.order}`}/>
                                         )
                                     } else {
                                         return (
