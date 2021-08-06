@@ -1,0 +1,124 @@
+.footer {
+    padding: 80px 0 160px;
+    @include max(1220px) {
+        padding: 60px 0;
+    }
+    &__container {
+        max-width: 1480px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 30px;
+        @include max(1540px) {
+            max-width: 100%;
+            width: calc(100vw - 60px);
+        }
+        @include max(1220px) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: auto auto auto;
+            grid-row-gap: 30px;
+            grid-column-gap: 30px;
+        }
+        @include max(580px) {
+            grid-template-columns: minmax(0, 1fr);
+            grid-row-gap: 60px;
+            grid-column-gap: initial;
+            grid-auto-rows: auto;
+        }
+        .footer__metronome {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            @include max(1220px) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+            @include max(580px) {
+                grid-row: 6 / 7;
+            }
+            .logo {
+                display: inline-block;
+                background-image: url('../assets/images/logo-minified.png');
+                background-size: 45px 64px;
+                width: 45px;
+                height: 64px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 25.6px;
+                margin-top: auto;
+                @include max(580px) {
+                    margin-top: 30px;
+                }
+            }
+        }
+        & > div:not(:first-child) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .footer__label {
+                font-size: 16px;
+                line-height: 25.6px;
+                font-weight: 700;
+                color: $black;
+                font-family: $secondaryFont;
+                margin-bottom: 15px;
+            }
+            .footer__link {
+                font-size: 16px;
+                line-height: 25.6px;
+                font-weight: 400;
+                color: $black;
+                font-family: $secondaryFont;
+                text-decoration: none;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .footer__first {
+            @include max(1220px) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+        }
+        .footer__second {
+            @include max(1220px) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+        }
+        .footer__third {
+            @include max(1220px) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            @include max(580px) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+        }
+        .footer_fourth {
+            @include max(1220px) {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+            @include max(580px) {
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+            }
+        }
+        .footer_fifth {
+            @include max(1220px) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+            @include max(580px) {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+            }
+        }
+    }
+}

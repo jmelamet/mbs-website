@@ -5,6 +5,7 @@ import Seo from 'gatsby-plugin-wpgraphql-seo';
 import Hero from '../components/hero'
 import Boxes from '../components/boxes'
 import Navigation from '../components/navigation'
+import Footer from '../components/footer'
 
 export default class Page extends Component {
 	render() {
@@ -34,6 +35,7 @@ export default class Page extends Component {
                             })}
                         </div>
                     </div>
+                    <Footer/>
                 </div>
             </>
         )
