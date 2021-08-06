@@ -129,6 +129,13 @@ export default class Hero extends Component {
                                     }
                                 </div>
                             </div>
+                            {data.innerBlocks.map((block) => {
+                                if (block.name === 'nerdcow/accordion') {
+                                    return (
+                                        <Accordion data={block} key={`${block.name}_${block.order}`}/>
+                                    )
+                                }
+                            })}
                         </div>
                     </div>
                 }
