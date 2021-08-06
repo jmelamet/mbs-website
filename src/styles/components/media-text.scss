@@ -11,6 +11,9 @@
         max-width: 920px;
         grid-column-gap: 60px;
     }
+    @include max(980px) {
+        max-width: 720px;
+    }
     @include max(690px) {
         grid-template-columns: minmax(0, 1fr);
         grid-column-gap: 0;
@@ -41,10 +44,11 @@
         border: 1px solid $accent01--active;
         border-radius: 100px;
         @include max(980px) {
-            width: 15vw;
-            height: 50%;
-            bottom: 50px;
-            left: 0;
+            // width: 15vw;
+            // height: 50%;
+            // bottom: 50px;
+            // left: 0;
+            display: none;
         }
         @include max(690px) {
             display: none;
@@ -281,6 +285,9 @@
             grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
             max-width: 920px;
             grid-column-gap: 60px;
+        }
+        @include max(980px) {
+            max-width: 720px;
         }
         @include max(690px) {
             grid-template-columns: minmax(0, 1fr);

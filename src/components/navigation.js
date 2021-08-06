@@ -26,6 +26,15 @@ export default class Navigation extends Component {
 
     componentDidMount() {
         document.addEventListener('scroll', this.trackScrolling);
+        if (window.pageYOffset < 20) {
+            this.setState({
+                hasScrolled: false
+            })
+        } else {
+            this.setState({
+                hasScrolled: true
+            })
+        }
     }
       
     componentWillUnmount() {
