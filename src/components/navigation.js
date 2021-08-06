@@ -286,7 +286,7 @@ export default class Navigation extends Component {
                                             <img src={informationIcon}/>
                                             <p><span>Questions?</span> 0207 946 0496</p>
                                         </a>
-                                        <Link to="/sign-up/" className="button button--primary">Book a consultation</Link>
+                                        <div className="button__wrapper"><Link to="/sign-up/" className="button button--primary">Book a consultation</Link></div>
                                         <ul>
                                             <li>Our consultant will call you back within 48 hours</li>
                                             <li>We’ll help you find any other areas for improvement</li>
