@@ -16,9 +16,7 @@
         background-color: transparent;
     }
     &__container {
-        // display: flex;
-        display: grid;
-        grid-template-columns: auto auto auto;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         max-width: 1480px;
