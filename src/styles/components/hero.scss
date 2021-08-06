@@ -29,9 +29,13 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        @include max(780px) {
+            align-items: flex-start;
+        }
         @include max(650px) {
             flex-direction: column;
             justify-content: initial;
+            align-items: center;
         }
         .hero-banner__text {
             max-width: 490px;
