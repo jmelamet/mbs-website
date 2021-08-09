@@ -45,6 +45,10 @@
         }
         .contact__confirmation {
             display: none;
+            h1 + p {
+                margin-top: 15px;
+                color: $grey;
+            }
             &.visible {
                 display: block;
             }
