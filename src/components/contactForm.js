@@ -56,9 +56,9 @@ function handleError({values, error, reset}) {
 }
 
 function handleSuccess({values, reset, confirmations}) {
-	const form = document.getElementsByClassName('gform_wrapper')
+	const form = document.getElementsByClassName('contact__form-wrapper')
 	const confirmation = document.getElementsByClassName('contact__confirmation')
-
+	
 	const customerName = document.getElementsByClassName('customer-name')
 
 	form[0].classList.add('hidden')

@@ -81,7 +81,9 @@ export default class Contact extends Component {
                                     })}
                                 </div>
                                 <div className="contact__form">
-                                    <ContactForm/>
+                                    <div className="contact__form-wrapper">
+                                        <ContactForm/>
+                                    </div>
                                     <div className="contact__confirmation">
                                         <h1>Thank you, <span className="customer-name"></span>!</h1>
                                         <p>We’ll get in touch with you to learn more about your startup and discuss details within 48 hours.</p>
