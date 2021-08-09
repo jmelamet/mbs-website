@@ -11,12 +11,16 @@ export default class Accordion extends Component {
     }
 
     handleAccordion = (event) => {
-        const accordion = event.currentTarget
+        const currentAccordion = event.currentTarget
+        const accordions = document.getElementsByClassName('accordion')
 
-        if (accordion.classList.contains('opened')) {
-            accordion.classList.remove('opened')
+        if (currentAccordion.classList.contains('opened')) {
+            currentAccordion.classList.remove('opened')
         } else {
-            accordion.classList.add('opened')
+            for (let accordion of accordions) {
+                accordion.classList.remove('opened')
+            }
+            currentAccordion.classList.add('opened')
         }
     }
 

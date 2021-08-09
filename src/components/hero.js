@@ -18,6 +18,13 @@ export default class Hero extends Component {
         tooltip[0].classList.contains('visible') ? tooltip[0].classList.remove('visible') : tooltip[0].classList.add('visible')
 	}
 
+    componentDidMount = () => {
+        const accordions = document.getElementsByClassName('accordion')
+        if (accordions.length > 0) {
+            accordions[0].classList.add('opened')
+        }
+    }
+
     render() {
         const data = this.props.data
         const attributes = JSON.parse(data.attributesJSON)
