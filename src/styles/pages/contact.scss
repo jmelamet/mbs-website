@@ -1,0 +1,53 @@
+.contact {
+    display: grid;
+    grid-template-columns: minmax(0, 255px) minmax(0, 1fr);
+    grid-column-gap: 120px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    @include max(990px) {
+        grid-column-gap: 60px;
+    }
+    @include max(910px) {
+        grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
+    }
+    @include max(690px) {
+        grid-template-columns: initial;
+        grid-column-gap: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__details {
+        & > div {
+            p {
+                @include max(690px) {
+                    text-align: center;
+                }
+            }
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__form {
+        @include max(690px) {
+            margin-top: 60px;
+            width: 100%;
+        }
+        .gform_wrapper {
+            &.hidden {
+                display: none;
+            }
+        }
+        .gravityform__button {
+            min-width: 290px;
+        }
+        .contact__confirmation {
+            display: none;
+            &.visible {
+                display: block;
+            }
+        }
+    }
+}

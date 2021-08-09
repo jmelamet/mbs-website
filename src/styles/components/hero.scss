@@ -60,6 +60,7 @@
             }
             p {
                 margin: 60px 0 30px;
+                color: $grey;
                 @include max(910px) {
                     max-width: 340px;
                 }
@@ -414,7 +415,12 @@
         }
     }
     &.hero-banner--plain {
-        min-height: 440px;
+        padding: 120px 0 150px;
+        margin-bottom: 0 !important;
+        min-height: initial;
+        @include max(910px) {
+            padding: 30px 0 60px;
+        }
         &::after {
             background-image: url('../assets/images/hero-left-blue.svg');
             @include max(1160px) {
@@ -425,7 +431,7 @@
             content: "";
             background-image: url('../assets/images/hero-right-red.svg');
             right: -250px;
-            top: 250px;
+            top: 0px;
             width: 770px;
             height: 770px;
             background-size: 770px 770px;
@@ -436,6 +442,7 @@
             .hero-banner__text {
                 max-width: 100%;
                 margin-bottom: 0;
+                margin-right: 0;
                 p {
                     margin: 30px auto;
                     max-width: 760px;

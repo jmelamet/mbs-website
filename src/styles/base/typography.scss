@@ -43,11 +43,28 @@ p {
     font-family: $secondaryFont;
     font-size: 20px;
     line-height: 32px;
-    color: $grey;
+    color: $black;
     font-weight: 400;
     @include max(910px) {
         font-size: 16px;
         line-height: 25.6px;
+    }
+    a {
+        text-decoration: none;
+        position: relative;
+        font-weight: 500;
+        color: $black;
+        white-space: pre;
+        &::after {
+            content: "";
+            width: 100%;
+            top: calc(100% + 2px);
+            left: 0;
+            height: 3px;
+            border-radius: 1000px;
+            background-color: $accent01--active;
+            position: absolute;
+        }
     }
 }
 

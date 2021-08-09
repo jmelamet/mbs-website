@@ -71,6 +71,8 @@ exports.createPages = async ({ graphql, actions }) => {
     pages.forEach(page => {
         if (page.template.templateName === "Sign Up") {
             template = path.resolve(`./src/templates/sign-up.js`)
+        } else if (page.template.templateName === "Contact Page") {
+            template = path.resolve(`./src/templates/contact.js`)
         } else {
             template = path.resolve(`./src/templates/page.js`)
         }

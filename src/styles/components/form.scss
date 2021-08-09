@@ -43,6 +43,25 @@
                                 border: 1px solid $accent02--selected;
                             }
                         }
+                        textarea {
+                            border: 1px solid $black;
+                            border-radius: 30px;
+                            width: 100%;
+                            padding: 12.5px 20px;
+                            font-family: $secondaryFont;
+                            background-color: transparent;
+                            font-size: 18px;
+                            line-height: 28.8px;
+                            color: $grey;
+                            box-sizing: border-box;
+                            transition: .3s;
+                            resize: unset;
+                            min-height: 120px;
+                            &:focus {
+                                background-color: $accent02--inactive;
+                                border: 1px solid $accent02--selected;
+                            }
+                        }
                         &.verified {
                             &::after {
                                 content: "";
@@ -105,6 +124,7 @@
         }
         .gform_footer {
             .gravityform__button {
+                margin-top: 30px;
                 padding: 20px 50px;
                 background-color: transparent;
                 color: $white;
