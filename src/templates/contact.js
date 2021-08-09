@@ -55,7 +55,6 @@ export default class Contact extends Component {
 
 	render() {
         const data = this.props.pageContext
-        const form = document.getElementsByClassName('contact__form')
 
 		return (
             <>
