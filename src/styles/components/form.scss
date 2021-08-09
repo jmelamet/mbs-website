@@ -77,7 +77,7 @@
                                 transform: translateY(-50%);
                                 background-color: $success;
                             }
-                            input {
+                            input, textarea {
                                 border: 1px solid $success;
                                 padding-right: 46px;
                                 background-color: transparent;
