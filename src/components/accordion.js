@@ -29,7 +29,7 @@ export default class Accordion extends Component {
         const attributes = JSON.parse(data.attributesJSON)
 
         return (
-            <div className="accordion" onClick={(event) => this.handleAccordion(event)}>
+            <div className={`accordion ${this.props.isMobile ? "accordion--mobile" : ""}`} onClick={(event) => this.handleAccordion(event)}>
                 <div className="accordion__question">
                     {attributes.question}
                 </div>

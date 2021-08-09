@@ -20,8 +20,10 @@ export default class Hero extends Component {
 
     componentDidMount = () => {
         const accordions = document.getElementsByClassName('accordion')
+        const mobileAccordions = document.getElementsByClassName('accordion--mobile')
         if (accordions.length > 0) {
             accordions[0].classList.add('opened')
+            mobileAccordions[0].classList.add('opened')
         }
     }
 
@@ -139,7 +141,7 @@ export default class Hero extends Component {
                             {data.innerBlocks.map((block) => {
                                 if (block.name === 'nerdcow/accordion') {
                                     return (
-                                        <Accordion data={block} key={`${block.name}_${block.order}`}/>
+                                        <Accordion data={block} key={`${block.name}_${block.order}`} isMobile={true}/>
                                     )
                                 }
                             })}
