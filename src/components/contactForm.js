@@ -57,7 +57,7 @@ function handleError({values, error, reset}) {
 
 function handleSuccess({values, reset, confirmations}) {
     const formWrapper = document.getElementsByClassName('contact__form')
-	const form = formWrapper[0].chidren[0]
+	const form = formWrapper[0].children[0]
 	const confirmation = formWrapper[0].children[1]
 
 	const customerName = document.getElementsByClassName('customer-name')
