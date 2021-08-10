@@ -1,0 +1,54 @@
+.wp-block-buttons.is-style-in-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 90px;
+    @include max(910px) {
+        margin-bottom: 60px;
+    }
+    .wp-block-button {
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
+        .wp-block-button__link {
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 500;
+            font-family: $secondaryFont;
+            color: $accent02--active;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            transition: .3s ease-in-out;
+            @include max(910px) {
+                font-size: 16px;
+                line-height: 25.6px;
+            }
+            &::after {
+                content: "";
+                width: 100%;
+                top: calc(100% + 2px);
+                left: 0;
+                height: 3px;
+                border-radius: 1000px;
+                background-color: $accent02--inactive;
+                position: absolute;
+                transition: .3s ease-in-out;
+            }
+            &:hover {
+                color: $accent02--selected;
+                &::after {
+                    background-color: $accent02--active;
+                }
+            }
+        }
+        &.active {
+            .wp-block-button__link {
+                color: $black;
+                &::after {
+                    background-color: $accent01--active;
+                }
+            }
+        }
+    }
+}
