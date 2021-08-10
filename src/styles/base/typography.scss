@@ -55,6 +55,7 @@ p {
         font-weight: 500;
         color: $black;
         white-space: pre;
+        transition: .3s ease-in-out;
         &::after {
             content: "";
             width: 100%;
@@ -64,6 +65,19 @@ p {
             border-radius: 1000px;
             background-color: $accent01--active;
             position: absolute;
+            transition: .3s ease-in-out;
+        }
+        &:hover {
+            color: $accent01;
+            &::after {
+                background-color: $accent01;
+            }
+        }
+        &:active {
+            color: $accent01--selected;
+            &::after {
+                background-color: $accent01--selected;
+            }
         }
     }
 }
