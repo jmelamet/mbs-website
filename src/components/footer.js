@@ -15,7 +15,7 @@ export default class Navigation extends Component {
                 <StaticQuery
                     query={graphql`
                         query {
-                            firstColumn: wpMenu(name: { eq: "Footer - First column" }) {
+                            firstColumn: wpMenu(name: { eq: "Footer - About" }) {
                                 menuItems {
                                     nodes {
                                         id
@@ -24,7 +24,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            secondColumn: wpMenu(name: { eq: "Footer - Second column" }) {
+                            secondColumn: wpMenu(name: { eq: "Footer - Contact" }) {
                                 menuItems {
                                     nodes {
                                         id
@@ -33,7 +33,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            thirdColumn: wpMenu(name: { eq: "Footer - Third column" }) {
+                            thirdColumn: wpMenu(name: { eq: "Footer - Legal" }) {
                                 menuItems {
                                     nodes {
                                         id
@@ -42,7 +42,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            fourthColumn: wpMenu(name: { eq: "Footer - Fourth column" }) {
+                            fourthColumn: wpMenu(name: { eq: "Footer - Services" }) {
                                 menuItems {
                                     nodes {
                                         id
@@ -51,7 +51,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            fifthColumn: wpMenu(name: { eq: "Footer - Fifth column" }) {
+                            fifthColumn: wpMenu(name: { eq: "Footer - Social" }) {
                                 menuItems {
                                     nodes {
                                         id
