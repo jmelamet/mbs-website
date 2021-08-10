@@ -14,7 +14,7 @@ export default class Table extends Component {
                 <div className="table">
                     <div className="table__head">
                         <div></div>
-                        <div className="metronome"><p>Metronome Business Solutions</p></div>
+                        <div className="metronome"><p>Metronome Business Solutions</p><span></span></div>
                         <div><p>Rest</p></div>
                     </div>
                     <div className="table__row">
