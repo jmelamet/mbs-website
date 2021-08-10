@@ -24,7 +24,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            secondColumn: wpMenu(name: { eq: "Footer - Contact" }) {
+                            secondColumn: wpMenu(name: { eq: "Footer - Services" }) {
                                 menuItems {
                                     nodes {
                                         id
@@ -42,7 +42,7 @@ export default class Navigation extends Component {
                                     }
                                 }
                             }
-                            fourthColumn: wpMenu(name: { eq: "Footer - Services" }) {
+                            fourthColumn: wpMenu(name: { eq: "Footer - Contact" }) {
                                 menuItems {
                                     nodes {
                                         id

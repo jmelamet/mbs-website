@@ -1,4 +1,5 @@
-<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="12" cy="12" r="12" fill="#484848"/>
-  <path d="M8 8l8 8m0-8l-8 8" stroke="#fff" stroke-linecap="round"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="12" fill="#484848"/>
+<rect x="8" y="8.70703" width="1" height="10.1823" rx="0.5" transform="rotate(-45 8 8.70703)" fill="white"/>
+<rect x="15.2" y="8" width="1" height="10.1823" rx="0.5" transform="rotate(45 15.2 8)" fill="white"/>
 </svg>

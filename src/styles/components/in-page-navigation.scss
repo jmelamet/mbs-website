@@ -36,9 +36,15 @@
                 transition: .3s ease-in-out;
             }
             &:hover {
-                color: $accent02--selected;
+                color: $accent01;
                 &::after {
-                    background-color: $accent02--active;
+                    background-color: $accent01;
+                }
+            }
+            &:active {
+                color: $accent01--selected;
+                &::after {
+                    background-color: $accent01--selected;
                 }
             }
         }
