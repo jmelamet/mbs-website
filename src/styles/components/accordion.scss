@@ -40,7 +40,7 @@
     }
     &__answer {
         // display: none;
-        max-height: 0%;
+        height: 0px;
         overflow: hidden;
         display: block;
         font-family: $secondaryFont;
