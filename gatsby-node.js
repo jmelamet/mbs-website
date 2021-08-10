@@ -24,6 +24,12 @@ exports.createPages = async ({ graphql, actions }) => {
                             name
                             attributesJSON
                             order
+                            innerBlocks {
+                                saveContent
+                                name
+                                attributesJSON
+                                order
+                            }
                         }
                     }
                     seo {

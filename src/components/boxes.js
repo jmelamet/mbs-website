@@ -5,7 +5,7 @@ export default class Boxes extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            typingElements: [],
+
         }
 
         this.elementsWrapper = React.createRef()

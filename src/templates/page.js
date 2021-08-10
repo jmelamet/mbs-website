@@ -7,6 +7,7 @@ import Boxes from '../components/boxes'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import Table from '../components/table'
+import NumberedSections from '../components/numberedSections'
 
 export default class Page extends Component {
 	render() {
@@ -31,6 +32,10 @@ export default class Page extends Component {
                                 } else if (block.name === 'nerdcow/table') {
                                     return (
                                         <Table data={block} key={`${block.name}_${block.order}`}/>
+                                    )
+                                } else if (block.name === 'nerdcow/section-wrap') {
+                                    return (
+                                        <NumberedSections data={block} key={`${block.name}_${block.order}`}/>
                                     )
                                 } else {
                                     return (
