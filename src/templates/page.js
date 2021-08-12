@@ -8,6 +8,7 @@ import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import Table from '../components/table'
 import NumberedSections from '../components/numberedSections'
+import Section from '../components/section'
 
 export default class Page extends Component {
 	render() {
@@ -37,9 +38,13 @@ export default class Page extends Component {
                                     return (
                                         <NumberedSections data={block} key={`${block.name}_${block.order}`}/>
                                     )
+                                } else if (block.name === 'nerdcow/wrapper') {
+                                    return (
+                                        <Section data={block} key={`${block.name}_${block.order}`}/>
+                                    )
                                 } else {
                                     return (
-                                        <div key={`${block.name}_${block.order}`}>{parse(block.saveContent)}</div>
+                                        <React.Fragment key={`${block.name}_${block.order}`}>{parse(block.saveContent)}</React.Fragment>
                                     )
                                 }
                             })}

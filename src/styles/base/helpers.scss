@@ -1,0 +1,15 @@
+.statistic {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-family: $primaryFont;
+    color: $black;
+    @include max(910px) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    & + .wp-block-columns {
+        margin-top: 30px;
+    }
+}

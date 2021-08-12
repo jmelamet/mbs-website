@@ -1,6 +1,6 @@
 .footer {
     padding: 160px 0 160px;
-    @include max(1220px) {
+    @include max(910px) {
         padding: 80px 0;
     }
     @include max(580px) {

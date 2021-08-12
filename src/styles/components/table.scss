@@ -29,7 +29,7 @@
             justify-content: center;
             span {
                 display: none;
-                @include max(830px) {
+                @include max(920px) {
                     background-image: url('../assets/images/logo-minified.png');
                     background-size: 17px 24px;
                     width: 17px;
@@ -39,7 +39,7 @@
             }
             p {
                 color: $accent01--active;
-                @include max(830px) {
+                @include max(920px) {
                     display: none;
                 }
             }

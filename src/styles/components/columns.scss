@@ -1,0 +1,20 @@
+.wp-block-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 30px;
+    @include max(700px) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-column-gap: 0;
+    }
+    .wp-block-column {
+        @include max(700px) {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+        p {
+            color: $grey;
+        }
+    }
+}

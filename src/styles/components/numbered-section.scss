@@ -1,0 +1,85 @@
+.numbered-sections {
+    max-width: 1084px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    .numbered-section {
+        position: relative;
+        &::before {
+            content: "";
+            left: 32px;
+            top: 0;
+            width: 1px;
+            background-color: $black;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            @include max(700px) {
+                content: none;
+            }
+        }
+        &__head {
+            display: flex;
+            align-items: center;
+            .counter {
+                width: 64px;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $accent01--active;
+                border-radius: 100%;
+                @include max(700px) {
+                    width: 40px;
+                    height: 40px;
+                }
+                span {
+                    color: $white;
+                    font-family: $primaryFont;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+                & + div {
+                    margin-left: 60px;
+                    @include max(700px) {
+                        margin-left: 15px;
+                    }
+                }
+            }
+            h2 {
+                margin-left: 60px;
+                @include max(700px) {
+                    margin-left: 15px;
+                }
+            }
+        }
+        &__body {
+            margin-left: 124px;
+            margin-top: 60px;
+            margin-bottom: 120px;
+            h3 {
+                max-width: 600px;
+            }
+            @include max(700px) {
+                margin-left: 0;
+                margin-top: 40px;
+                margin-bottom: 60px;
+            }
+        }
+        &.numbered-section--wo-title {
+            .numbered-section__head {
+                @include max(370px) {
+                    .wp-block-button__link {
+                        padding: 20px 40px;
+                    }
+                }
+            }
+            .numbered-section__body {
+                display: none;
+            }
+        }
+    }
+}

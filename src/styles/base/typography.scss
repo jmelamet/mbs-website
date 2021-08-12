@@ -29,6 +29,10 @@ h2 {
     line-height: 44.2px;
     color: $black;
     font-weight: 700;
+    @include max(910px) {
+        font-size: 26px;
+        line-height: 33.8px;
+    }
 }
 
 h3 {
@@ -37,6 +41,9 @@ h3 {
     line-height: 28.6px;
     color: $black;
     font-weight: 700;
+    & + .wp-block-columns {
+        margin-top: 30px;
+    }
 }
 
 p {
@@ -78,6 +85,15 @@ p {
             &::after {
                 background-color: $accent01--selected;
             }
+        }
+    }
+}
+
+h1, h2, h3, h4, p {
+    &.has-text-align-center {
+        text-align: center;
+        @include max(910px) {
+            text-align: left;
         }
     }
 }

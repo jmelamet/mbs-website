@@ -1,0 +1,42 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include max(910px) {
+        align-items: flex-start;
+    }
+    .wp-block-image {
+        & + h2 {
+            margin-top: 60px;
+            @include max(910px) {
+                margin-top: 30px;
+            }
+        }
+        figure {
+            &.aligncenter {
+                display: flex;
+                justify-content: center;
+                @include max(910px) {
+                    justify-content: flex-start;
+                }
+            }
+            img {
+                max-width: 80px !important;
+                height: auto;
+                width: 100% !important;
+                @include max(910px) {
+                    max-width: 40px !important;
+                }
+            }
+        }
+    }
+    h2 {
+        max-width: 960px;
+        & + p {
+            margin-top: 30px;
+        }
+    }
+    p {
+        max-width: 960px;
+    }
+}

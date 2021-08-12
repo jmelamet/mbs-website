@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     @include max(990px) {
-        min-height: calc(100vh - 64px);
+        // min-height: calc(100vh - 64px);
         position: relative;
     }
     &::after {
