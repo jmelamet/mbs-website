@@ -70,9 +70,9 @@ function handleSuccess({values, reset, confirmations}) {
 
 const ContactForm = () => (
     <GravityFormForm
-        id={15}
+        id={3}
         formData={AllGravityData()}
-        lambda="https://devnerdcow.wpengine.com/wp-json/formsubmit/v1/submit/"
+        lambda="https:///metronomeprod.wpengine.com/wp-json/formsubmit/v1/submit/"
         successCallback={handleSuccess}
         errorCallback={handleError}
     />
