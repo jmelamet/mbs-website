@@ -76,7 +76,7 @@ const SignUpForm = () => (
     <GravityFormForm
         id={2}
         formData={AllGravityData()}
-        lambda="https:///metronomeprod.wpengine.com/wp-json/formsubmit/v1/submit/"
+        lambda="https:///metronomeprod.wpengine.com/wp-json/formsubmit/v1/"
         successCallback={handleSuccess}
         errorCallback={handleError}
     />

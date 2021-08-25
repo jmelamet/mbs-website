@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		siteUrl: "https://metronomebusinesssolutions.com",
+		siteUrl: "https://metronomeprod.wpengine.com",
 		// siteUrl: "https://devnerdcow.wpengine.com",
 		title: "Metronome",
 	},
