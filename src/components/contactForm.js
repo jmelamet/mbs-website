@@ -72,7 +72,7 @@ const ContactForm = () => (
     <GravityFormForm
         id={3}
         formData={AllGravityData()}
-        lambda="https:///metronomeprod.wpengine.com/wp-json/formsubmit/v1/"
+        lambda="https:///metronomeprod.wpengine.com/wp-json/formsubmit/v1/submit/"
         successCallback={handleSuccess}
         errorCallback={handleError}
     />
