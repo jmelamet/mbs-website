@@ -21,6 +21,9 @@
     &__details {
         & > div {
             p {
+                a {
+                    white-space: initial;
+                }
                 @include max(690px) {
                     text-align: center;
                 }
