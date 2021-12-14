@@ -37,8 +37,6 @@ exports.createPages = async ({ graphql, actions }) => {
                         metaDesc
                         focuskw
                         metaKeywords
-                        metaRobotsNoindex
-                        metaRobotsNofollow
                         opengraphTitle
                         opengraphDescription
                         opengraphImage {
