@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		siteUrl: "https://metronomeprod.wpengine.com",
+		siteUrl: "https://metronomebusinesssolutions.com/",
 		// siteUrl: "https://devnerdcow.wpengine.com",
 		title: "Metronome",
 	},
@@ -49,5 +49,14 @@ module.exports = {
                 },
             },
         },
+		`gatsby-plugin-advanced-sitemap`,
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				host: 'https://metronomebusinesssolutions.com',
+				sitemap: 'https://metronomebusinesssolutions.com/sitemap.xml',
+				policy: [{ userAgent: '*', allow: '/' }]
+			}
+		}
 	],
 };
