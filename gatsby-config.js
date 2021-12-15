@@ -57,6 +57,14 @@ module.exports = {
 				sitemap: 'https://metronomebusinesssolutions.com/sitemap.xml',
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
-		}
+		},
+		{
+			resolve: "gatsby-plugin-google-tagmanager",
+			options: {
+				id: "GTM-5HDQQ9P",
+				includeInDevelopment: true,
+				enableWebVitalsTracking: true,
+			},
+		},
 	],
 };
